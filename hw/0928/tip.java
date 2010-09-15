@@ -12,7 +12,5 @@ public class tip {
     total = tip + total;
 
     System.out.printf("\nYour Tip is:   %s\nYour Total is: %s\n", tip, total);
-
-//    JOptionPane.showMessageDialog(null, txt);
   }
 }
