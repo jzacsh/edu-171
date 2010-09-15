@@ -1,8 +1,14 @@
+import javax.swing.JOptionPane;
+
 public class hello {
     /**
      * @param args
      */
     public static void main(String[] args) {
-      System.out.println("Hello World");
+      String cmdtxt    =  "Hello World!";
+      System.out.println(cmdtxt);
+
+      String dialogtxt =  "Hi Java";
+      JOptionPane.showMessageDialog(null, dialogtxt);
     }
 }
