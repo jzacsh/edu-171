@@ -12,6 +12,6 @@ public class interest {
     rate    = stdin.nextFloat();
 
     interest = balance * (rate / 1200);
-    System.out.printf("\nYour Interest is:%f \n", interest);
+    System.out.printf("\nYour Interest is:%.2f \n", interest);
   }
 }
