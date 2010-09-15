@@ -7,14 +7,11 @@ public class dim {
     System.out.printf("I'm a smart calendar, I tell you the days in the month you've specifiedi\n. You *should* use `/usr/bin/cal`... but whatever.\n");
     int month = 0, year = 0, days = 0;
     Calendar current = Calendar.getInstance();
-
+    
     if (args.length != 0) {
       //@TODO: use date functions, use current date's data
-      month = Calendar.get(Calendar.MONTH); // is this how its called?
-/*
-      month = Calendar.get(MONTH);
-      year  = Calendar.get(YEAR);
-*/
+      month = current.get(Calendar.MONTH);
+      year  = current.get(Calendar.YEAR);
     }
     else {
       System.out.printf("Please input the month  (format MM): ");
