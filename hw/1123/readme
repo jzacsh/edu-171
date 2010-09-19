@@ -1,3 +1,11 @@
 pg 205 #6.13
   Reverse arrays
   due 11/23
+
+(increasing array size)
+Once an array is created, its size is fixed. Occasionally, you need to add
+more values to an array, but it is full. In such a case, you can create a new,
+larger array to replace the existing array. Write a method with the following
+header:
+  public static int[] doubleCapacity(int[] list)
+the method returns a new array that doubles the size of the parameter `list'.
