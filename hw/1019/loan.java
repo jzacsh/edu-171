@@ -8,6 +8,7 @@ public class loan {
     float loan = 0, rate = 0;
     
     if (args.length == 4) {
+      //command-line params
       for (i in args[]) {
         if (args[i] == '-l') {
           try {
@@ -37,6 +38,7 @@ public class loan {
       }
     }
     else {
+      //interactive mode
       System.out.printf("Please input the loan amount: $");
       try {
         loan = stdin.nextInt();
@@ -46,13 +48,15 @@ public class loan {
         loan = 0;
       }
 
-      System.out.printf("Please input the interest rate: %%");
-        try {
-          dura  = stdin.nextInt();
-        }
-        catch (Exception e) {
-          System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s", e);
-        }
+      if (loan == 0) {
+        System.out.printf("Please input the interest rate: %%");
+          try {
+            dura  = stdin.nextInt();
+          }
+          catch (Exception e) {
+            System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s", e);
+            dura = 0;
+          }
       }
 
       if (dura == 0 || loan ==0) {
@@ -61,7 +65,6 @@ public class loan {
         System.exit(1);
       }
     }
-
     //calculate days:
     if (month == 1) {
       if ((year % 4) == 0 && (year % 100) != 0) {
@@ -81,6 +84,16 @@ public class loan {
         days = 31;
     }
  
-    System.out.printf("\nDays in month %d: %d \n", month + 1, days);
+    //print table
+    printf("-- loan summary: ----------------------------------------------\n");
+    printf("Loan Amount: %64f\n", loan);
+    printf("Number of Years: %64i\n", rate);
+    pinttf("---------------------------------------------------------------\n");
+    String head_rate    = "(%) Interest Rate";
+    String head_monthly = "($) Monthly Payment";
+    String head_total   = "($) Total Payment";
+    printf("%25s", head_monthly);
+    printf("%23s", head_rate);
+    printf("%18s\n", head_total);
   }
 }
