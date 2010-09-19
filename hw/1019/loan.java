@@ -6,26 +6,33 @@ public class loan {
     System.out.printf("I'm a loan calculator.\nI'll tell you the Monthly Payments at various interest rates, given a loan aount and loan duration.\n");
     int dura = 0; // years
     float loan = 0, rate = 0;
+
+    System.out.printf("\nDEBUG:\tNumber of args: %x\n", args.length);
+    int jz;
+    for (jz=0; jz <=args.length; jz++) {
+      System.out.printf("\nDEBUG:\targs: %x\n", args[jz]);
+    }
     
     if (args.length == 4) {
       //command-line params
-      for (i in args[]) {
-        if (args[i] == '-l') {
+      int i;
+      for (i=0; i <= args.length; i++) {
+        if (args[i] == "-l") {
           try {
-            loan = args[i+1];
+            loan = Float.valueOf(args[i+1]);
           }
           catch(Exception e) {
-            System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s", e);
+            System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
             loan = 0;
             break;
           }
         }
-        else if (args[i] == '-r') {
+        else if (args[i] == "-r") {
           try{
-            dura = args[i+1];
+            dura = Integer.valueOf(args[i+1]);
           }
           catch(Exception e) {
-            System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s", e);
+            System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s\n", e);
             dura = 0;
             break;
           }
@@ -33,7 +40,7 @@ public class loan {
       }
       if (dura == 0 || loan == 0) {
         String usage = "usage:\t -l [loan] -r [rate]\n\tinvoked without parameters, will default to interactive mode.";
-        System.err.printf("ERROR:\n%s", usage);
+        System.err.printf("\nERROR: Necessary values not set.\n%s\n", usage);
         System.exit(1);
       }
     }
@@ -44,7 +51,7 @@ public class loan {
         loan = stdin.nextInt();
       }
       catch (Exception e) {
-        System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s", e);
+        System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
         loan = 0;
       }
 
@@ -54,18 +61,20 @@ public class loan {
             dura  = stdin.nextInt();
           }
           catch (Exception e) {
-            System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s", e);
+            System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s\n", e);
             dura = 0;
           }
       }
 
       if (dura == 0 || loan ==0) {
         String usage = "usage:\t -l [loan] -r [rate]\n\tinvoked without parameters, will default to interactive mode.";
-        System.err.printf("ERROR:\n%s", usage);
+        System.err.printf("\nERROR: Necessary values not set.\n%s\n", usage);
         System.exit(1);
       }
     }
-    //calculate days:
+
+    //calculate payments
+/*
     if (month == 1) {
       if ((year % 4) == 0 && (year % 100) != 0) {
         days = 29;
@@ -83,17 +92,20 @@ public class loan {
     else {
         days = 31;
     }
+*/
  
     //print table
-    printf("-- loan summary: ----------------------------------------------\n");
-    printf("Loan Amount: %64f\n", loan);
-    printf("Number of Years: %64i\n", rate);
-    pinttf("---------------------------------------------------------------\n");
+    String head_title  = "-- loan summary: ----------------------------------------------";
+    System.out.printf("%s\n", head_title);
+    System.out.printf("Loan Amount: %64f\n", loan);
+    System.out.printf("Number of Years: %64i\n", rate);
+    String head_border = "---------------------------------------------------------------";
+    System.out.printf("%s\n", head_border);
     String head_rate    = "(%) Interest Rate";
     String head_monthly = "($) Monthly Payment";
     String head_total   = "($) Total Payment";
-    printf("%25s", head_monthly);
-    printf("%23s", head_rate);
-    printf("%18s\n", head_total);
+    System.out.printf("%25s", head_monthly);
+    System.out.printf("%23s", head_rate);
+    System.out.printf("%18s\n", head_total);
   }
 }
