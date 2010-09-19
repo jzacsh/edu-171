@@ -1,0 +1,10 @@
+JFLAGS=-g
+JC=javac
+
+default: install
+
+install:
+  $(JC) $(JFLAGS) ./*.java
+
+clean:
+  rm ./*.class

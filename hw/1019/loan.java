@@ -10,34 +10,55 @@ public class loan {
     if (args.length == 4) {
       for (i in args[]) {
         if (args[i] == '-l') {
-          loan = args[i+1];
+          try {
+            loan = args[i+1];
+          }
+          catch(Exception e) {
+            System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s", e);
+            loan = 0;
+            break;
+          }
         }
         else if (args[i] == '-r') {
-          dura = args[i+1];
+          try{
+            dura = args[i+1];
+          }
+          catch(Exception e) {
+            System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s", e);
+            dura = 0;
+            break;
+          }
         }
       }
       if (dura == 0 || loan == 0) {
-        usage();
-        die();
+        String usage = "usage:\t -l [loan] -r [rate]\n\tinvoked without parameters, will default to interactive mode.";
+        System.err.printf("ERROR:\n%s", usage);
+        System.exit(1);
       }
     }
     else {
-      System.out.printf("Please input the month  (format MM): ");
+      System.out.printf("Please input the loan amount: $");
       try {
-        month = stdin.nextInt() - 1;
-      } catch (Exception e) {
-        System.err.printf("ERROR: %s\nBetter luck next time.\n", e);
+        loan = stdin.nextInt();
+      }
+      catch (Exception e) {
+        System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s", e);
+        loan = 0;
+      }
+
+      System.out.printf("Please input the interest rate: %%");
+        try {
+          dura  = stdin.nextInt();
+        }
+        catch (Exception e) {
+          System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s", e);
+        }
+      }
+
+      if (dura == 0 || loan ==0) {
+        String usage = "usage:\t -l [loan] -r [rate]\n\tinvoked without parameters, will default to interactive mode.";
+        System.err.printf("ERROR:\n%s", usage);
         System.exit(1);
-      }
-      System.out.printf("Please input the year (format YYYY): ");
-      year  = stdin.nextInt();
-      if (year < 0 || month < 0) {
-        System.out.printf("ERROR: Not a valid date.");
-        return;
-      }
-      else if (month > 11) {
-        System.out.printf("ERROR: Not a valid date.");
-        return;
       }
     }
 
