@@ -7,18 +7,22 @@ public class loan {
     int dura = 0; // years
     float loan = 0, rate = 0;
 
+    //debugging:
     System.out.printf("\nDEBUG:\tNumber of args: %x\n", args.length);
     int jz;
-    for (jz=0; jz <=args.length; jz++) {
-      System.out.printf("\nDEBUG:\targs: %x\n", args[jz]);
+    for (String st : args) {
+      System.out.printf("\nDEBUG:\targ is %s\n", st);
+//      System.out.printf("\nDEBUG:\targ #%x: %s\n", jz, args[jz]);
     }
     
+    //get variable information
     if (args.length == 4) {
       //command-line params
       int i;
-      for (i=0; i <= args.length; i++) {
+      for (i=0; i < args.length; i++) {
         if (args[i] == "-l") {
           try {
+            System.err.printf("DEBUG (in loop): args[%x+1] = %s\n", i, args[i+1]);
             loan = Float.valueOf(args[i+1]);
           }
           catch(Exception e) {
@@ -29,6 +33,7 @@ public class loan {
         }
         else if (args[i] == "-r") {
           try{
+            System.err.printf("DEBUG (in loop): args[%x+1] = %s\n", i, args[i+1]);
             dura = Integer.valueOf(args[i+1]);
           }
           catch(Exception e) {

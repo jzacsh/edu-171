@@ -1,0 +1,15 @@
+make: Nothing to be done for `default'.
+I'm a loan calculator.
+I'll tell you the Monthly Payments at various interest rates, given a loan aount and loan duration.
+
+DEBUG:	Number of args: 4
+
+DEBUG:	arg is -r
+
+DEBUG:	arg is 2
+
+DEBUG:	arg is -l
+
+DEBUG:	arg is 10000
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+	at loan.main(loan.java:23)
