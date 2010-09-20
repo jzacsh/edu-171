@@ -3,16 +3,13 @@ import java.util.Scanner;
 public class loan {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
-    System.out.printf("I'm a loan calculator.\nI'll tell you the Monthly Payments at various interest rates, given a loan aount and loan duration.\n");
+    System.out.printf("\nI'm a loan calculator.\nI'll tell you the Monthly Payments at various interest rates, given a loan aount and loan duration.\n");
     int dura = 0; // years
     float loan = 0, rate = 0;
 
     //debugging:
-    System.out.printf("\nDEBUG:\tNumber of args: %x\n", args.length);
     int jz;
     for (String st : args) {
-      System.out.printf("\nDEBUG:\targ is %s\n", st);
-//      System.out.printf("\nDEBUG:\targ #%x: %s\n", jz, args[jz]);
     }
     
     //get variable information
@@ -20,10 +17,9 @@ public class loan {
       //command-line params
       int i;
       for (i=0; i < args.length; i++) {
-        if (args[i] == "-l") {
+        if (args[i].contentEquals("-l")) {
           try {
-            System.err.printf("DEBUG (in loop): args[%x+1] = %s\n", i, args[i+1]);
-            loan = Float.valueOf(args[i+1]);
+            loan = Float.valueOf(args[++i]);
           }
           catch(Exception e) {
             System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
@@ -31,10 +27,9 @@ public class loan {
             break;
           }
         }
-        else if (args[i] == "-r") {
+        else if (args[i].contentEquals("-r")) {
           try{
-            System.err.printf("DEBUG (in loop): args[%x+1] = %s\n", i, args[i+1]);
-            dura = Integer.valueOf(args[i+1]);
+            dura = Integer.valueOf(args[++i]);
           }
           catch(Exception e) {
             System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s\n", e);
@@ -78,39 +73,40 @@ public class loan {
       }
     }
 
-    //calculate payments
-/*
-    if (month == 1) {
-      if ((year % 4) == 0 && (year % 100) != 0) {
-        days = 29;
-      }
-      else if ((year % 400) == 0) {
-        days = 29;
-      }
-      else {
-        days = 28;
-      }
-    }
-    else if(month == 8 || month == 3 || month == 5 || month == 10) {
-        days = 30;
-    }
-    else {
-        days = 31;
-    }
-*/
- 
     //print table
-    String head_title  = "-- loan summary: ----------------------------------------------";
-    System.out.printf("%s\n", head_title);
-    System.out.printf("Loan Amount: %64f\n", loan);
-    System.out.printf("Number of Years: %64i\n", rate);
-    String head_border = "---------------------------------------------------------------";
+    String head_title  = "-- loan summary: --------------------------------------------------";
+    String head_border = "-------------------------------------------------------------------";
+
+    System.out.printf("\n%s\n", head_border);
+    System.out.printf("%s\n",   head_title);
+    System.out.printf("Loan Amount    : %-64f\n", loan);
+    System.out.printf("Number of Years: %-64x\n", dura);
+
     System.out.printf("%s\n", head_border);
+
     String head_rate    = "(%) Interest Rate";
     String head_monthly = "($) Monthly Payment";
     String head_total   = "($) Total Payment";
-    System.out.printf("%25s", head_monthly);
-    System.out.printf("%23s", head_rate);
-    System.out.printf("%18s\n", head_total);
+    System.out.printf("%-25s", head_monthly);
+    System.out.printf("%-23s", head_rate);
+    System.out.printf("%-18s\n", head_total);
+
+    //looped data calc and output
+      //why the f*ck can't i figure out simple interest rate based on their
+      //table? is it 5%/yr???
+    rate = 5;
+    float yearly  = (rate * (float)(.01)) * (loan);
+    float monthly = (yearly / 12);
+    while (rate <= 8) {
+      System.out.printf("%-64f", rate);
+      rate = rate + (float)(0.125);
+
+      System.out.printf("%-64f", monthly);
+      yearly  = (loan / dur);
+      System.out.printf("%-64f", yearly);
+      monthly = (yearly / 12);
+    }
+
+    System.out.printf("%s\n", head_border);
   }
 }
