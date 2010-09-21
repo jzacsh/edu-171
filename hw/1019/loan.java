@@ -87,44 +87,49 @@ public class loan {
     String head_rate    = "(%) Interest Rate";
     String head_monthly = "($) Monthly Payment";
     String head_total   = "($) Total Payment";
-    System.out.printf("%-25s", head_monthly);
     System.out.printf("%-23s", head_rate);
+    System.out.printf("%-25s", head_monthly);
     System.out.printf("%-18s\n", head_total);
 
     //looped data calc and output
 /*
-        how to:  calc total cost of loan:
-            loop over amt of payments (eg.: 60 mth)
-            - interst = 0
-            - interest = interest + % of current principal balance
-            - balance = 0
-            - balance = principal dividend amt of payments - static
-          total cost  = balance + interest
-          monthly pay = total cost / amt of payment
+    how to:  calc total cost of loan:
+        loop over amt of payments (eg.: 60 mth)
+        - interst = 0
+        - interest = interest + % of current principal balance
+        - balance = 0
+        - balance = principal dividend amt of payments - static
+      total cost  = balance + interest
+      monthly pay = total cost / amt of payment
 */
     int inc;
     float balance, total, fee, current;
-    rate = 5;
+
     int payments = (dura * 12);
     float div = loan / (float)payments;
+
+    rate = 5;
     while (rate <= 8) {
-      inc  = 1;
       balance = loan;
-      current  = rate * (float)(.01);
       fee = 0;
+      current = rate * (float)(.01);
+      inc = 1;
       while (inc <= payments) {
-        balance = balance - div;
-        fee = fee + (current * balance);
+        if (inc != 1) {
+          balance = balance - div;
+        }
+        else {
+        }
+        fee = fee + ((current * balance) / 12);
         inc++;
       }
       //print results for this interest rate:
-      total = fee+(float)loan;
-      System.out.printf("%-25f", current * (float)100);
-      System.out.printf("%-23f", total / (float)payments);
-      System.out.printf("%-18f\n", total);
-      rate = rate + (float)0.125;
+      total = fee + (float)loan;
+      System.out.printf("%-25.4f", current * 100f);
+      System.out.printf("%-23.2f", total / payments);
+      System.out.printf("%-18.2f\n", total);
+      rate = rate + 0.125f;
     }
-
     System.out.printf("%s\n", head_border);
   }
 }
