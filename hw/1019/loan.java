@@ -46,16 +46,16 @@ public class loan {
     }
     else {
       //interactive mode
-      System.out.printf("Please input the loan amount: $");
+      System.out.printf("Please input the loan amount:   $");
       try {
-        loan = stdin.nextInt();
+        loan = stdin.nextFloat();
       }
       catch (Exception e) {
         System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
         loan = 0;
       }
 
-      if (loan == 0) {
+      if (loan != 0) {
         System.out.printf("Please input the interest rate: %%");
           try {
             dura  = stdin.nextInt();
@@ -125,9 +125,9 @@ public class loan {
       }
       //print results for this interest rate:
       total = fee + (float)loan;
-      System.out.printf("%-23.4f", current * 100f);
-      System.out.printf("%-25.2f", total / payments);
-      System.out.printf("%-18.2f\n", total);
+      System.out.printf(" %-22.4f", current * 100f);
+      System.out.printf(" %-25.2f", total / payments);
+      System.out.printf("%16.2f\n", total);
       rate = rate + 0.125f;
     }
     System.out.printf("%s\n", head_border);
