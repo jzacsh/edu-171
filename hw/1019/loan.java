@@ -102,26 +102,25 @@ public class loan {
           total cost  = balance + interest
           monthly pay = total cost / amt of payment
 */
-    int inc = dur;
+    int inc;
+    float balance, total, fee, current;
     rate = 5;
-    float yearly  = (rate * (float)(.01)) * (loan);
-    float monthly = (yearly / 12);
+    int payments = (dur * 12);
+    float div = loan / (float)payments;
     while (rate <= 8) {
-      inc = dur;
-      yearly  = (rate * (float)(.01)) * (loan);
-      monthly = (yearly / 12);
-      while (inc >= dur) {
+      inc  = 1;
+      balance = loan;
+      current  = rate * (float)(.01);
+      fee = 0;
+      while (inc <= payments) {
+        balance = balance - div;
+        fee = fee + (current * balance);
         inc++;
       }
-
-      System.out.printf("%-25f", rate);
-      rate = rate + (float)(0.125);
-
-      System.out.printf("%-25f", monthly);
-      yearly  = (loan / dur);
-
-      System.out.printf("%-64f\n", yearly);
-      monthly = (yearly / 12);
+      //print results for this interest rate:
+      System.out.printf("%-25f", current * (float)100);
+      System.out.printf("%-23f", monthly);
+      System.out.printf("%-18f\n", fee+loan);
     }
 
     System.out.printf("%s\n", head_border);
