@@ -92,18 +92,35 @@ public class loan {
     System.out.printf("%-18s\n", head_total);
 
     //looped data calc and output
-      //why the f*ck can't i figure out simple interest rate based on their
-      //table? is it 5%/yr???
+/*
+        how to:  calc total cost of loan:
+            loop over amt of payments (eg.: 60 mth)
+            - interst = 0
+            - interest = interest + % of current principal balance
+            - balance = 0
+            - balance = principal dividend amt of payments - static
+          total cost  = balance + interest
+          monthly pay = total cost / amt of payment
+*/
+    int inc = dur;
     rate = 5;
     float yearly  = (rate * (float)(.01)) * (loan);
     float monthly = (yearly / 12);
     while (rate <= 8) {
-      System.out.printf("%-64f", rate);
+      inc = dur;
+      yearly  = (rate * (float)(.01)) * (loan);
+      monthly = (yearly / 12);
+      while (inc >= dur) {
+        inc++;
+      }
+
+      System.out.printf("%-25f", rate);
       rate = rate + (float)(0.125);
 
-      System.out.printf("%-64f", monthly);
+      System.out.printf("%-25f", monthly);
       yearly  = (loan / dur);
-      System.out.printf("%-64f", yearly);
+
+      System.out.printf("%-64f\n", yearly);
       monthly = (yearly / 12);
     }
 
