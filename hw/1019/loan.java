@@ -7,20 +7,14 @@ public class loan {
     int dura = 0; // years
     float loan = 0, rate = 0;
 
-    //debugging:
-    int jz;
-    for (String st : args) {
-    }
-    
     //get variable information
     if (args.length == 4) {
       //command-line params
       int i;
       for (i=0; i < args.length; i++) {
         if (args[i].contentEquals("-l")) {
-          try {
+          try
             loan = Float.valueOf(args[++i]);
-          }
           catch(Exception e) {
             System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
             loan = 0;
@@ -28,9 +22,8 @@ public class loan {
           }
         }
         else if (args[i].contentEquals("-r")) {
-          try{
+          try
             dura = Integer.valueOf(args[++i]);
-          }
           catch(Exception e) {
             System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s\n", e);
             dura = 0;
@@ -47,9 +40,8 @@ public class loan {
     else {
       //interactive mode
       System.out.printf("Please input the loan amount:   $");
-      try {
+      try
         loan = stdin.nextFloat();
-      }
       catch (Exception e) {
         System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
         loan = 0;
@@ -57,16 +49,15 @@ public class loan {
 
       if (loan != 0) {
         System.out.printf("Please input the interest rate: %%");
-          try {
+          try
             dura  = stdin.nextInt();
-          }
           catch (Exception e) {
             System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s\n", e);
             dura = 0;
           }
       }
 
-      if (dura == 0 || loan ==0) {
+      if (dura == 0 || loan == 0) {
         String usage = "usage:\t -l [loan] -r [rate]\n\tinvoked without parameters, will default to interactive mode.";
         System.err.printf("\nERROR: Necessary values not set.\n%s\n", usage);
         System.exit(1);
