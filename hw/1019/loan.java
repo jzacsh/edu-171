@@ -115,18 +115,18 @@ public class loan {
       current = rate * (float)(.01);
       inc = 1;
       while (inc <= payments) {
-        if (inc != 1) {
+        if (inc != 1)
           balance = balance - div;
-        }
-        else {
-        }
         fee = fee + ((current * balance) / 12);
+        if (rate == 5) {
+//          System.out.printf("\tDEBUG: %8.3f\n", fee);
+        }
         inc++;
       }
       //print results for this interest rate:
       total = fee + (float)loan;
-      System.out.printf("%-25.4f", current * 100f);
-      System.out.printf("%-23.2f", total / payments);
+      System.out.printf("%-23.4f", current * 100f);
+      System.out.printf("%-25.2f", total / payments);
       System.out.printf("%-18.2f\n", total);
       rate = rate + 0.125f;
     }
