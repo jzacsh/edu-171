@@ -14,6 +14,9 @@ public class counting {
 
     double[] counts = new double[range];
 
+    //safe
+    for (i = lower; i <= upper; i++)
+      counts[i] = 0;
     
     //generate:
     java.util.Random gen = new java.util.Random();
@@ -21,9 +24,8 @@ public class counting {
     for (i = 0; i < quant; i++) {
       current = gen.nextInt(range);
       for (ii = lower; ii <= upper; ii++) {
-        if (current == ii) {
-          counts[ii] = current;
-        }
+        if (current == ii)
+          counts[ii]++;
       }
     }
 
