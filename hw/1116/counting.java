@@ -1,5 +1,3 @@
-import java.lang.Math;
-
 public class counting {
   public static void main(String[] args) {
     int quant = 100; //number of digits to generate
@@ -20,7 +18,7 @@ public class counting {
     //generate:
     int current, ii;
     for (i = 0; i < quant; i++) {
-      current = (int)(Math.random() * range);
+      current = (int)(java.lang.Math.random() * range);
       for (ii = lower; ii <= upper; ii++) {
         if (current == ii) {
           counts[ii] = current;
