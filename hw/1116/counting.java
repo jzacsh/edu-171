@@ -14,7 +14,7 @@ public class counting {
 
     double[] counts = new double[range];
 
-    //safe
+    //clearing out values for incrementation
     for (i = lower; i <= upper; i++)
       counts[i] = 0;
     
