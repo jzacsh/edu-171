@@ -16,9 +16,10 @@ public class counting {
 
     
     //generate:
+    java.util.Random gen = new java.util.Random();
     int current, ii;
     for (i = 0; i < quant; i++) {
-      current = (int)(java.lang.Math.random() * range);
+      current = gen.nextInt(range);
       for (ii = lower; ii <= upper; ii++) {
         if (current == ii) {
           counts[ii] = current;
