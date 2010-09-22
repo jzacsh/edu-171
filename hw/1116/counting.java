@@ -41,6 +41,8 @@ public class counting {
       System.out.printf("%26.0f occurances\n", counts[i]);
     }
 
+    String verify = "java counting | awk '/occurances$/{ sum += $2 } END { print sum }'";
+    System.out.printf("\nYou can verify the output of this program by running the following:\n%s\nfalconindy++ awk++\n", verify);
     System.out.printf("%s\n", head_border);
   }
 }
