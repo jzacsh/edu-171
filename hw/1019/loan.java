@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.*;
+import java.lang.Math;
 
 public class loan {
   public static void main(String[] args) {
@@ -93,29 +95,17 @@ public class loan {
       total cost  = balance + interest
       monthly pay = total cost / amt of payment
 */
-    int inc;
-    float balance, total, fee, current;
+    float balance, total, current, powow;
 
     int payments = (dura * 12);
     float div = loan / (float)payments;
 
     rate = 5;
     while (rate <= 8) {
-      balance = loan;
-      fee = 0;
       current = rate * (float)(.01);
-      inc = 1;
-      while (inc <= payments) {
-        if (inc != 1)
-          balance = balance - div;
-        fee = fee + ((current * balance) / 12);
-        if (rate == 5) {
-//          System.out.printf("\tDEBUG: %8.3f\n", fee);
-        }
-        inc++;
-      }
       //print results for this interest rate:
-      total = fee + (float)loan;
+      powow = Math.pow((1 + current), payments);
+      total = ((float)loan * current * powow) / (powow -1);
       System.out.printf(" %-22.4f", current * 100f);
       System.out.printf(" %-25.2f", total / payments);
       System.out.printf("%16.2f\n", total);
