@@ -53,7 +53,7 @@ public class loan {
       }
 
       if (loan != 0) {
-        System.out.printf("Please input the interest rate: %%");
+        System.out.printf("Please input the duration of the loan (years): ");
           try {
             dura  = stdin.nextInt();
           }
@@ -89,29 +89,18 @@ public class loan {
     System.out.printf("%-18s\n", head_total);
 
     //looped data calc and output
-/*
-    how to:  calc total cost of loan:
-        loop over amt of payments (eg.: 60 mth)
-        - interst = 0
-        - interest = interest + % of current principal balance
-        - balance = 0
-        - balance = principal dividend amt of payments - static
-      total cost  = balance + interest
-      monthly pay = total cost / amt of payment
-*/
-    double balance, total, current, powow;
-
+    double current, powow, mrate, monthly;
     int payments = (dura * 12);
-    double div = loan / (double)payments;
 
     for (double rate = 5; rate <= 8; rate += 0.125) {
-      current = (rate / 100) / 12;
+      current = (rate / 100);
+      mrate = current / 12;
       //print results for this interest rate:
-      powow = Math.pow((1 + current), payments);
-      total = (loan * current * powow) / (powow -1);
+      powow   = Math.pow((1 + mrate), payments);
+      monthly = (loan * mrate * powow) / (powow -1);
       System.out.printf(" %-22.4f", current * 100);
-      System.out.printf(" %-25.2f", total);
-      System.out.printf("%16.2f\n", total * payments);
+      System.out.printf(" %-25.2f", monthly);
+      System.out.printf("%16.2f\n", monthly * (double)payments);
     }
     System.out.printf("%s\n", head_border);
   }
