@@ -1,13 +1,13 @@
 import java.util.Scanner;
-import java.io.*;
 import java.lang.Math;
+import java.io.*;
 
 public class loan {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
     System.out.printf("\nI'm a loan calculator.\nI'll tell you the Monthly Payments at various interest rates, given a loan aount and loan duration.\n");
     int dura = 0; // years
-    float loan = 0, rate = 0;
+    double loan = 0;
 
     //get variable information
     if (args.length == 4) {
@@ -15,8 +15,9 @@ public class loan {
       int i;
       for (i=0; i < args.length; i++) {
         if (args[i].contentEquals("-l")) {
-          try
+          try {
             loan = Float.valueOf(args[++i]);
+          }
           catch(Exception e) {
             System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
             loan = 0;
@@ -24,8 +25,9 @@ public class loan {
           }
         }
         else if (args[i].contentEquals("-r")) {
-          try
+          try {
             dura = Integer.valueOf(args[++i]);
+          }
           catch(Exception e) {
             System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s\n", e);
             dura = 0;
@@ -42,8 +44,9 @@ public class loan {
     else {
       //interactive mode
       System.out.printf("Please input the loan amount:   $");
-      try
+      try {
         loan = stdin.nextFloat();
+      }
       catch (Exception e) {
         System.err.printf("ERROR: Value for 'loan' is not a valid number.\n\t%s\n", e);
         loan = 0;
@@ -51,8 +54,9 @@ public class loan {
 
       if (loan != 0) {
         System.out.printf("Please input the interest rate: %%");
-          try
+          try {
             dura  = stdin.nextInt();
+          }
           catch (Exception e) {
             System.err.printf("ERROR: Value for 'duration' is not a valid number.\n\t%s\n", e);
             dura = 0;
@@ -95,21 +99,19 @@ public class loan {
       total cost  = balance + interest
       monthly pay = total cost / amt of payment
 */
-    float balance, total, current, powow;
+    double balance, total, current, powow;
 
     int payments = (dura * 12);
-    float div = loan / (float)payments;
+    double div = loan / (double)payments;
 
-    rate = 5;
-    while (rate <= 8) {
-      current = rate * (float)(.01);
+    for (double rate = 5; rate <= 8; rate += 0.125) {
+      current = (rate / 100) / 12;
       //print results for this interest rate:
       powow = Math.pow((1 + current), payments);
-      total = ((float)loan * current * powow) / (powow -1);
-      System.out.printf(" %-22.4f", current * 100f);
-      System.out.printf(" %-25.2f", total / payments);
-      System.out.printf("%16.2f\n", total);
-      rate = rate + 0.125f;
+      total = (loan * current * powow) / (powow -1);
+      System.out.printf(" %-22.4f", current * 100);
+      System.out.printf(" %-25.2f", total);
+      System.out.printf("%16.2f\n", total * payments);
     }
     System.out.printf("%s\n", head_border);
   }
