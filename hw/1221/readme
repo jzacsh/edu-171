@@ -1,2 +1,20 @@
 12/21 Account
   pg 256 #7.3
+
+the account class
+design a class named `Account' that contains:
+- an int data field named `id' for the account (default 0).
+- a double data field named `balance' for the account (default 0).
+- a double data field named `annualInterestRate' that stores the current
+  interest rate (default 0).
+- a Date data field name `dateCreated' that stores the date when the account
+  was crated.
+- a no-arg constructor that creates a default account.
+- the accessor and mutator methods for `id', `balance', and
+  `annualInterestRate'.
+- the accessor method for `dateCreated'.
+- a method named `getMonthlyInterestRate()' that returns the monthly interest
+  rate.
+- a method named `withDraw()' that withdraws a specified amount from the
+  account.
+- a method named `deposit()' that deposits a specified amount to the account.

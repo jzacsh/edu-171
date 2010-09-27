@@ -1,2 +1,8 @@
 12/14 Reading Files
   pg 300 #8.22
+
+Writing/Reading data
+write a program to create a file named Exercise8_22.txt if it does not exist.
+write one hundred integers created randomly into the file using text I/O.
+Integers are separated by spaces in the file,. Read the data back from the
+file and display the sorted data.
