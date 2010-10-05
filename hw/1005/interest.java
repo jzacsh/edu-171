@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class interest {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
-    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>\n";
+    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "assignment: pg 65; que. #2.13; due: 10/05\n";
     System.out.printf("%s\nI calculate Annual Interest, given an interest rate and balance.\n", intro);
     float balance = 0, rate = 0, interest = 0;

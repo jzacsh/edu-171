@@ -15,7 +15,7 @@ import java.io.*;
 public class dim {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
-    String intro = "\n\nJonathan Zacsh <jzacsh@gmail.com>\n";
+    String intro = "\n\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "\npg 94; que. #3.11; due: 10/12\n";
     String summary = "I'm a smart calendar, I tell you the days in the month you've specifiedi\n.";
     summary += "You *should* use `/usr/bin/cal`... but whatever.\n";

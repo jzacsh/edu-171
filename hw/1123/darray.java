@@ -15,7 +15,7 @@ public class darray {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
 
-    String stamping = "\nJonathan Zacsh <jzacsh@gmail.com>\n";
+    String stamping = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     stamping += "pg 205; que. #6.13; due: 11/23\n";
     String intro = "Hello, I am going to double the size of your";
     intro += " array,\nhow large is your array?";

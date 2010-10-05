@@ -13,7 +13,7 @@ public class counting {
     int range; //value of numbers generated between upper and lower
     int lower = 0; //upper limit of generation
     int upper = 9; //upper limit of generation
-    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>\n";
+    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "pg 205; que. #6.7; due: 11/16\n";
     String summary = "Then I will calculate the occurances of each number.";
     System.out.printf("\n%s\nBelow I will generate a 'random' number between %d and %d, %d times.\n%s\n", intro, lower, upper, quant, summary);

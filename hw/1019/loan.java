@@ -18,7 +18,7 @@ import java.io.*;
 public class loan {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
-    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>\n";
+    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "pg 125; que. #4.21; due: 10/19\n";
     String summary = "\nI'm a loan calculator.";
     summary += "\nI'll tell you the Monthly Payments at various interest rates,";
