@@ -3,12 +3,13 @@ import java.util.Scanner;
 /**
  * Class to demonstrates the ability of the doubleCapacity function to return
  * an array of double the size it was given.
+ * prints a string 
+ *   description of newly created array, as proof of functioning algorithm.
  * - course:     COMP-171-801RL
  * - assignment: pg 205; que. #6.13; due: 11/23
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
- * @return string description of newly created array, as proof of functioning
- * algorithm.
+ * @return void
  */
 
 public class darray {

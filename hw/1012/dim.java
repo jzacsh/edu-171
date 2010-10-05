@@ -5,11 +5,12 @@ import java.io.*;
 /**
  * Calculates number of days in a given month for a given year, taking into
  * account leap year.
+ *   prints string Description of days in month
  * - course:     COMP-171-801RL
  * - assignment: pg 94; que. #3.11; due: 10/12
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
- * @return string Description of days in month
+ * @return void
  */
 
 public class dim {

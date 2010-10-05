@@ -3,12 +3,12 @@ import java.util.Scanner;
 /**
  * Interactive class to prompt user for gratuity and bill sub-total in order to
  * calcuate (and return) a new grand-total and amount of the tip.
+ *   prints string containing tip and bill-total
  * - course:     COMP-171-801RL
  * - assignment: pg 63; que. #2.5; due: 09/28
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
- * @return string
- *  returns string containing tip and bill-total
+ * @return void
  */
 
 public class tip {

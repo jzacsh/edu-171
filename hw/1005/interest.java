@@ -3,11 +3,12 @@ import javax.swing.JOptionPane;
 
 /**
  * Calculates year's interest based on user-provided interest rate and balance.
+ *   prints string Total Interest
  * - course:     COMP-171-801RL
  * - assignment: pg 65; que. #2.13; due: 10/05
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
- * @return string Total Interest
+ * @return void
  */
 public class interest {
   public static void main(String[] args) {
