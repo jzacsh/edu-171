@@ -17,7 +17,7 @@ public class tip {
     Scanner input = new Scanner(System.in);
 
     //explain program purpose
-    String assign = "\nby: Jonathan Zacsh <jzacsh@gmail.com>\nAssignment: pg 63; que. #2.5; due: 09/28.\n";
+    String assign = "\nby: Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\nAssignment: pg 63; que. #2.5; due: 09/28.\n";
     String intro  = "\nHello, I calculate a tip and bill-total based on\nyour bill's sub-total and your chosen gratuity.\n";
     System.out.printf("%s\n%s\n", assign, intro);
 

@@ -1,23 +1,23 @@
 jznix::du/comp171/src/hw/1116$ java counting
 
 
-Jonathan Zacsh <jzacsh@gmail.com>
+Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
 pg 205; que. #6.7; due: 11/16
 
 Below I will generate a 'random' number between 0 and 9, 100 times.
 Then I will calculate the occurances of each number.
 
 -- occurances of each random number -------------------------------
-0                                                     16 occurances
-1                                                     10 occurances
-2                                                     17 occurances
-3                                                      5 occurances
-4                                                      8 occurances
-5                                                      3 occurances
-6                                                     10 occurances
-7                                                     11 occurances
-8                                                      4 occurances
-9                                                     16 occurances
+0                                                      2 occurances
+1                                                      8 occurances
+2                                                     12 occurances
+3                                                      9 occurances
+4                                                     15 occurances
+5                                                      9 occurances
+6                                                     12 occurances
+7                                                     13 occurances
+8                                                      8 occurances
+9                                                     12 occurances
 
 You can verify the output of this program by running the following:
 java counting | awk '/occurances$/{ sum += $2 } END { print sum }'
