@@ -14,10 +14,16 @@ import java.io.*;
  * of interest rates.
  */
 
+
 public class loan {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
-    System.out.printf("\nI'm a loan calculator.\nI'll tell you the Monthly Payments at various interest rates, given a loan aount and loan duration.\n");
+    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>\n";
+    intro += "pg 125; que. #4.21; due: 10/19\n";
+    String summary = "\nI'm a loan calculator.";
+    summary += "\nI'll tell you the Monthly Payments at various interest rates,";
+    summary += "\ngiven a loan aount and loan duration.\n";
+    System.out.printf("\n%s\n%s", intro, summary);
     int dura = 0; // years
     double loan = 0;
 
