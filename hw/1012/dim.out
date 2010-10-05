@@ -1,0 +1,13 @@
+jznix::du/comp171/src/hw/1012$ java dim
+
+
+Jonathan Zacsh <jzacsh@gmail.com>
+
+pg 94; que. #3.11; due: 10/12
+
+I'm a smart calendar, I tell you the days in the month you've specifiedi
+.You *should* use `/usr/bin/cal`... but whatever.
+Please input the month  (format MM): 09
+Please input the year (format YYYY): 2009
+
+Days in month 9: 30
