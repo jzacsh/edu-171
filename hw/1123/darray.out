@@ -1,0 +1,11 @@
+jznix::du/comp171/src/hw/1123$ java darray
+
+
+Jonathan Zacsh <jzacsh@gmail.com>
+pg 205; que. #6.13; due: 11/23
+
+Hello, I am going to double the size of your array,
+how large is your array? 10
+
+Size of your array will be: 10
+Size of your new array is : 20
