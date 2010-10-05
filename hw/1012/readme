@@ -1,2 +1,9 @@
-  10-12  Days of the month
-    pg 94  #3.11
+10-12  Days of the month
+  pg 94  #3.11
+
+Finding the number of days in a month
+write a program that prompts the user to enter the month and year, and display
+the number of days in the month. For example, if the user entered month 2 and
+year 2000, the program should display that February 2009 has 29 days. If the
+user enterd month 3 and year 2005, the program should display that March 2005
+has 31 days.

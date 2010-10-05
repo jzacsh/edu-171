@@ -1,2 +1,23 @@
-  10-05  Console Input / Dialog Boxes
-    pg 65  #2.13
+10-05  Console Input / Dialog Boxes
+  pg 65  #2.13
+
+
+Calculating interest
+If you know the balance and the annual percentage interest rate, you can
+compute the interest on the next monthly payment using the following formula:
+
+  interest = balance * (annualInterestRate / 1200)
+
+write a program that reads the balance and the annual percentage interest rate
+and displays the interest for the next month in two versions: (a) Use dialog
+boxes to obtain input and display output; (b) Use console input and output. A
+sample run of the console input and output shown in Figure 2.14
+
+
+Figure 2.14
+  C:\exercise>java Exercise2_13b
+  Enter balance: 100000
+  Enter annual interest rate: 4.625
+  The interest is 385.41
+
+  C:\exercise>
