@@ -1,0 +1,10 @@
+jznix::du/comp171/src/hw/1005$ java interest
+
+Jonathan Zacsh <jzacsh@gmail.com>
+assignment: pg 65; que. #2.13; due: 10/05
+
+I calculate Annual Interest, given an interest rate and balance.
+Please input a balance       : $100000
+Please input an interest rate: %4.625
+
+Your Interest is: $385.42
