@@ -1,0 +1,14 @@
+jznix::du/comp171/src/hw/0928$ java tip
+
+by: Jonathan Zacsh <jzacsh@gmail.com>
+Assignment: pg 63; que. #2.5; due: 09/28.
+
+
+Hello, I calculate a tip and bill-total based on
+your bill's sub-total and your chosen gratuity.
+
+Please input a bill total:            : $100
+Please input a gratuity: (eg.: '0.15'):  0.15
+
+Your Tip is:   $15.00
+Your Total is: $115.00
