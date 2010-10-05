@@ -2,6 +2,18 @@ import java.util.Scanner;
 import java.lang.Math;
 import java.io.*;
 
+/**
+ * Given a user-provided loan -amount and -period, calculates and returns
+ * possible Monthly payments and Total payments based on the loan duration and
+ * a range of hardcoded interest rates from 5-8% at .125% increments.
+ * - course:     COMP-171-801RL
+ * - assignment: pg 125; que. #4.21; due: 10/19
+ *
+ * @author Jonathan Zacsh <jzacsh@gmail.com>
+ * @return string Table of possible monthly and total payments based on a range
+ * of interest rates.
+ */
+
 public class loan {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);

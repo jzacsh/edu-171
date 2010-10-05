@@ -1,5 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Class to demonstrates the ability of the doubleCapacity function to return
+ * an array of double the size it was given.
+ * - course:     COMP-171-801RL
+ * - assignment: pg 205; que. #6.13; due: 11/23
+ *
+ * @author Jonathan Zacsh <jzacsh@gmail.com>
+ * @return string description of newly created array, as proof of functioning
+ * algorithm.
+ */
+
 public class darray {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
@@ -21,6 +32,12 @@ public class darray {
     System.out.printf("Size of your new array is : %d\n", doubled.length);
   }
 
+  /**
+   * Doubles the size of any given array.
+   *
+   * @param  array an array of integers of any given size.
+   * @return array an array of integers, double the size of its input.
+   */
   public static int[] doubleCapacity(int[] list) {
     int[] bigger;
     bigger = new int[2 * list.length];

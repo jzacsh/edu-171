@@ -1,3 +1,12 @@
+/**
+ * Randomly generates 100 random integers between 0 and 9
+ * - course:     COMP-171-801RL
+ * - assignment: pg 205; que. #6.7; due: 11/16
+ *
+ * @author Jonathan Zacsh <jzacsh@gmail.com>
+ * @return string table of numbers representing quantity of randomly printed
+ * characters.
+ */
 public class counting {
   public static void main(String[] args) {
     int quant = 100; //number of digits to generate

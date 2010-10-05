@@ -1,5 +1,11 @@
 /**
  * Class for managing a given week of employee hours.
+ * - course:     COMP-171-801RL
+ * - assignment: pg 207; que. #6.23; due: 12/07
+ *
+ * @author Jonathan Zacsh <jzacsh@gmail.com>
+ * @return string a table displaying the total hours worked by each employee
+ * for a given week.
  */
 public class wkHours {
   public static void main() {
