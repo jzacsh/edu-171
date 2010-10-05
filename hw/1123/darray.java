@@ -15,10 +15,12 @@ public class darray {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
 
+    String stamping = "\nJonathan Zacsh <jzacsh@gmail.com>\n";
+    stamping += "pg 205; que. #6.13; due: 11/23\n";
     String intro = "Hello, I am going to double the size of your";
     intro += " array,\nhow large is your array?";
 
-    System.out.printf("%s ", intro);
+    System.out.printf("\n%s\n%s ", stamping, intro);
 
     int size;
     size = stdin.nextInt();
