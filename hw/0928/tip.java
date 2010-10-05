@@ -8,7 +8,7 @@ public class tip {
     System.out.printf("Please input a bill total: $");
     total = input.nextDouble();
 
-    tip   = (double)0.15 * total;
+    tip   = 0.15 * total;
     total = tip + total;
 
     System.out.printf("\nYour Tip is:   $%.2f\nYour Total is: $%.2f\n", tip, total);
