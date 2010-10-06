@@ -1,12 +1,29 @@
 at request of professor:
 
 - add inline commenting to each bit of code to explain process
-x add doxygen commenting to existing classes and methods to include:
+- add doxygen commenting to existing classes and methods to include:
    x name,
    x course number,
    x assignment number
+   - lab number
 
-x modify existing output of each program to include:
+- modify existing output of each program to include:
    x name,
    x course number,
    x assignment number
+   - lab number
+
+LABS:
+x 01
+x 02
+x 03
+x 04
+- 05
+x 06
+- 07
+x 08
+- 09
+- 10
+- 11
+- 12
+- 13
