@@ -51,8 +51,8 @@ public class WeekHours {
     int size = weight.length;
     boolean finished = false;
     double sentinal = -1;
-    String header = "em |  su  m   t   w   th  f   sa";
-    header += "--------------------------------";
+    String header = "em |  su   m   t   w  th   f  sa  (totals)\n";
+          header += "--------------------------------";
     System.out.printf("%s", header);
     do {
       for (int i = 0; i < size; i++) {
@@ -69,7 +69,8 @@ public class WeekHours {
         System.out.printf("\n%1x  | ", largest, data[largest]);
         int amt = data[largest].length;
         for (int s = 0; s < amt; s++)
-          System.out.printf("  %2.0f", data[largest][s]);
+          System.out.printf("  %-2.0f", data[largest][s]);
+        System.out.printf(" (%2.2f)", weight[i]);
       }
     } while(!finished);
     System.out.printf("\n");
