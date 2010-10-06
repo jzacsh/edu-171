@@ -15,22 +15,24 @@ public class WeekHours {
     Scanner stdin = new Scanner(System.in);
     int emps, days;
     emps = days = 7;
-    double staff[][] = new double[emps][days];
-    double totals[] = new double[emps];
+//    double staff[][] = new double[emps][days];
+    double totals[]  = new double[emps];
 
     //@TODO: randomly, dymaically generate this:
-    staff[0] = { 2,  4,  3,  4,  5,  8,  8};
-    staff[1] = { 7,  3,  4,  3,  3,  4,  4};
-    staff[2] = { 3,  3,  4,  3,  3,  2,  2};
-    staff[3] = { 9,  3,  4,  7,  3,  4,  1};
-    staff[4] = { 3,  5,  4,  3,  6,  3,  8};
-    staff[5] = { 3,  4,  4,  6,  3,  4,  4};
-    staff[6] = { 3,  7,  4,  8,  3,  8,  4};
-    staff[7] = { 6,  3,  5,  9,  2,  7,  9};
+    double[][] staff = {
+        { 2,  4,  3,  4,  5,  8,  8},
+        { 7,  3,  4,  3,  3,  4,  4},
+        { 3,  3,  4,  3,  3,  2,  2},
+        { 9,  3,  4,  7,  3,  4,  1},
+        { 3,  5,  4,  3,  6,  3,  8},
+        { 3,  4,  4,  6,  3,  4,  4},
+        { 3,  7,  4,  8,  3,  8,  4},
+        { 6,  3,  5,  9,  2,  7,  9}
+      };
 
     for (int e = 0; e < emps; e++) {
       // build a new array called totals[]
-      System.out.printf("Employee #%x's total hours: %.2f\n", e, Total(staff[e])); //debug run
+      totals[e] = Total(staff[e]);
     }
 
     //pass staff[][] and totals[] to Sort() method to be printed.
@@ -45,7 +47,33 @@ public class WeekHours {
    * @return void
    */
   public static void Sort(double[] weight, double[][] data) {
-    //
+    int largest = -99;
+    int size = weight.length;
+    boolean finished = false;
+    double sentinal = -1;
+    String header = "em |  su  m   t   w   th  f   sa";
+    header += "--------------------------------";
+    System.out.printf("%s", header);
+    do {
+      for (int i = 0; i < size; i++) {
+        finished = true;
+        if (i > 0) {
+          if (weight[i] != sentinal && weight[i] > largest) {
+            largest = i;
+            weight[i] = sentinal;
+            finished = false;
+          }
+        }
+        else
+          largest = i;
+        System.out.printf("\n%1x  | ", largest, data[largest]);
+        int amt = data[largest].length;
+        for (int s = 0; s < amt; s++)
+          System.out.printf("  %2.0f", data[largest][s]);
+      }
+    } while(!finished);
+    System.out.printf("\n");
+
   }
 
   /**
