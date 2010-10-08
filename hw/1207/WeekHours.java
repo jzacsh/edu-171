@@ -29,14 +29,28 @@ public class WeekHours {
         { 3,  7,  4,  8,  3,  8,  4},
         { 6,  3,  5,  9,  2,  7,  9}
       };
+    OldDebug("size of array of statically created data array: "+staff.length+".\n");
 
-    for (int e = 0; e < emps; e++) {
+    for (int e = 0; e < staff.length; e++) {
       // build a new array called totals[]
       totals[e] = Total(staff[e]);
     }
 
+    OldDebug("size of array of totals is, just after creation: "+totals.length+".\n");
+
     //pass staff[][] and totals[] to Sort() method to be printed.
     Sort(totals, staff);
+  }
+
+  /**
+   * Prints strings passed in if internal boolean is set.
+   *
+   * @param string debug statement
+   * @return void
+   */
+  public static void OldDebug(String dbg) {
+    if (true)
+      System.out.printf("\nDEBUG:\n%s\n", dbg);
   }
 
   /**
@@ -50,31 +64,42 @@ public class WeekHours {
     int largest = -99;
     int size = weight.length;
     boolean finished = false;
+    double total = 0;
     double sentinal = -1;
+
+    OldDebug("size of array of totals is: "+size+".\n");
+
+    //print table header
     String header = "em |  su   m   t   w  th   f  sa  (totals)\n";
           header += "--------------------------------";
     System.out.printf("%s", header);
     do {
+      //find the next hardest working employee
       for (int i = 0; i < size; i++) {
         finished = true;
-        if (i > 0) {
-          if (weight[i] != sentinal && weight[i] > largest) {
-            largest = i;
-            weight[i] = sentinal;
-            finished = false;
-          }
-        }
-        else
+        //is this the hardest working employee, so far?
+        if (weight[i] != sentinal && weight[i] >= largest) {
+          OldDebug("weight["+i+"] = "+weight[i]+" is, so far, the largest.");
           largest = i;
+          total = weight[i];
+          weight[i] = sentinal;
+          finished = false;
+        }
+      }
+
+      OldDebug("weight["+largest+"] = "+total+" _is_ the largest.");
+      //print next hardest working employee's hours
+      if (!finished) {
         System.out.printf("\n%1x  | ", largest, data[largest]);
         int amt = data[largest].length;
         for (int s = 0; s < amt; s++)
           System.out.printf("  %-2.0f", data[largest][s]);
-        System.out.printf(" (%2.2f)", weight[i]);
+        System.out.printf(" (%2.2f)", total);
       }
-    } while(!finished);
-    System.out.printf("\n");
 
+    } while(!finished);
+
+    System.out.printf("\n");
   }
 
   /**
