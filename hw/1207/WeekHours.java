@@ -13,10 +13,9 @@ import java.util.Scanner;
 public class WeekHours {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
-    int emps, days;
-    emps = days = 7;
-//    double staff[][] = new double[emps][days];
-    double totals[]  = new double[emps];
+    int emps = 8;
+    int days = 7;
+    double totals[][]  = new double[emps][2];
 
     //@TODO: randomly, dymaically generate this:
     double[][] staff = {
@@ -29,17 +28,26 @@ public class WeekHours {
         { 3,  7,  4,  8,  3,  8,  4},
         { 6,  3,  5,  9,  2,  7,  9}
       };
-    OldDebug("size of array of statically created data array: "+staff.length+".\n");
 
-    for (int e = 0; e < staff.length; e++) {
-      // build a new array called totals[]
-      totals[e] = Total(staff[e]);
+    for (int e = 0; e < totals.length; e++) {
+      // build a new array called totals[][]
+      totals[e][0] = Total(staff[e]); 
+      totals[e][1] = e;
     }
 
-    OldDebug("size of array of totals is, just after creation: "+totals.length+".\n");
+    //debug: test totals before sorting:
+    OldDebug("Before sorting the totals:");
+    for (int e = 0; e < totals.length; e++)
+      System.out.printf("DEBUG: Employee#: %1.0f has %2.2f hours.\n", totals[e][1], totals[e][0]);
+    System.out.printf("\n"); //DEBUG
 
     //pass staff[][] and totals[] to Sort() method to be printed.
-    Sort(totals, staff);
+    double sorted[][] = new double[totals.length][totals[0].length];
+    Sort(totals, sorted);
+
+    for (int e = 0; e < totals.length; e++) {
+      System.out.printf("Employee#: %1.0f has %2.2f hours.\n", sorted[e][1], sorted[e][0]);
+    }
   }
 
   /**
@@ -50,7 +58,24 @@ public class WeekHours {
    */
   public static void OldDebug(String dbg) {
     if (true)
-      System.out.printf("\nDEBUG:\n%s\n", dbg);
+      System.out.printf("\nDEBUG:\t%s\n", dbg);
+  }
+
+  /**
+   *
+   */
+  public static void Sort(double[][] totals, double[][] sorted) {
+    double largest = -1;
+    for (int s = 0; s < sorted.length; s++) {
+      for (int i = 0; i < totals.length; i++) {
+        if (totals[i][0] > largest) {
+          sorted[s][0] = totals[i][0];
+          sorted[s][1] = totals[i][1];
+          largest = totals[i][0];
+        }
+      }
+    }
+    return;
   }
 
   /**
@@ -60,7 +85,7 @@ public class WeekHours {
    * @param  double two dimensional array to be printed
    * @return void
    */
-  public static void Sort(double[] weight, double[][] data) {
+  public static void SortOld(double[] weight, double[][] data) {
     int largest = -99;
     int size = weight.length;
     boolean finished = false;
