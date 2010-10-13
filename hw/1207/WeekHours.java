@@ -34,18 +34,21 @@ public class WeekHours {
       totals[e][1] = e;               // employee's index
     }
 
-    //debug: test totals before sorting:
-    OldDebug("Before sorting the totals:");
-    for (int e = 0; e < totals.length; e++)
-      System.out.printf("DEBUG: Employee#: %1.0f has %2.2f hours.\n", totals[e][1], totals[e][0]);
-    System.out.printf("\n"); //DEBUG
-
     //pass staff[][] and totals[] to Sort() method to be printed.
     double sorted[][] = new double[totals.length][totals[0].length];
     Sort(totals, sorted);
 
-    for (int e = 0; e < totals.length; e++)
-      System.out.printf("Employee#: %1.0f has %2.2f hours.\n", sorted[e][1], sorted[e][0]);
+    String header = "em |  su  m   t   w   th  f   sa | [totals]\n";
+    header += "-------------------------------------------";
+    System.out.printf("%s\n", header);
+    int current;
+    for (int e = 0; e < totals.length; e++) {
+      System.out.printf("%1.0f | ", sorted[e][1]);
+      current = (int)sorted[e][1];
+      for (int i = 0; i < staff[current].length; i++)
+        System.out.printf(" %2.0f ", staff[current][i]);
+      System.out.printf(" |   %2.2f\n", sorted[e][0]);
+    }
   }
 
   /**
