@@ -30,9 +30,8 @@ public class WeekHours {
       };
 
     for (int e = 0; e < totals.length; e++) {
-      // build a new array called totals[][]
-      totals[e][0] = Total(staff[e]); 
-      totals[e][1] = e;
+      totals[e][0] = Total(staff[e]); // employee's hours
+      totals[e][1] = e;               // employee's index
     }
 
     //debug: test totals before sorting:
@@ -45,9 +44,8 @@ public class WeekHours {
     double sorted[][] = new double[totals.length][totals[0].length];
     Sort(totals, sorted);
 
-    for (int e = 0; e < totals.length; e++) {
+    for (int e = 0; e < totals.length; e++)
       System.out.printf("Employee#: %1.0f has %2.2f hours.\n", sorted[e][1], sorted[e][0]);
-    }
   }
 
   /**
@@ -65,15 +63,20 @@ public class WeekHours {
    *
    */
   public static void Sort(double[][] totals, double[][] sorted) {
-    double largest = -1;
+    double sentinal = -1;
+    double largest = sentinal;
+    int current = 0;
     for (int s = 0; s < sorted.length; s++) {
       for (int i = 0; i < totals.length; i++) {
-        if (totals[i][0] > largest) {
+        if (totals[i][0] > largest && totals[i][0] != sentinal) {
           sorted[s][0] = totals[i][0];
           sorted[s][1] = totals[i][1];
           largest = totals[i][0];
+          current = i;
         }
       }
+      totals[current][0] = sentinal;
+      largest = sentinal;
     }
     return;
   }
