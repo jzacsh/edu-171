@@ -28,15 +28,42 @@ future value for the years from 1 to 30, as shown below:
    30      14730.57
 */
 import java.util.Scanner;
+import java.lang.Math;
 
 public class InvestmentValueLab05 {
   public static void main(String[] args) {
-    Scanner stdin = new Scanner(System.in);
-    // start professor requisite //////////////////////////////////////////////////////////////////
-    String intro = "\n\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
+    Scanner stdin  = new Scanner(System.in);
+    // start professor requisite //////////////////////////////////////////
+    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "\npg 163; que. #5.7; due: 11/02\n";
-    // end professor requisite ////////////////////////////////////////////////////////////////////
+    // end professor requisite ////////////////////////////////////////////
     String summary = "I'm an investment calculator. All I need is the interest rate and duration (in years).\n";
     System.out.printf("%s\n%s", intro, summary);
+
+
+    double investment, interest = 0;
+    int duration = 0;
+
+    //@TODO: make these values dynamic
+    investment = interest = 0;
+    duration = 0;
+
+    //double value = futureInvestmentValue(investment, interest, duration);
+
+    //START DEBUGGING INFO:
+    String dbg_form = "futureInvestmentValue(10000, 0.05/12, 5) returns 12833.59";
+    double dbg_inv = 1000;
+    double dbg_rate = 0.9;
+    int dbg_dur = 5;
+    double dbg_value = futureInvestmentValue(dbg_inv, dbg_rate, dbg_dur);
+    System.out.printf("DEBUG:\n\texample was\n\t\t%s\n\tYours is:\n\t\tfutureInvestmentValue(%f, %f, %x) returns %f\nDEBUG(end)\n", dbg_form, dbg_inv, dbg_rate, dbg_dur, dbg_value);
+    //END DEBUGGING INFO
+  }
+
+  public static double futureInvestmentValue(
+    double investmentAmount, double monthlyInterestRate, int years) {
+        double base = investmentAmount * (1 + monthlyInterestRate);
+        int exp = years * 12;
+        return Math.pow(base, (double)exp);
   }
 }
