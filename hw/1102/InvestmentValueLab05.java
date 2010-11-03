@@ -51,10 +51,10 @@ public class InvestmentValueLab05 {
     //double value = futureInvestmentValue(investment, interest, duration);
 
     //START DEBUGGING INFO:
-    String dbg_form = "futureInvestmentValue(10000.00, 0.09/12, 5) returns 1093.80";
+    String dbg_form = "futureInvestmentValue(1000.00, 9, 2) returns 1196.41";
     double dbg_inv = 10000;
     double dbg_rate = 9;
-    int dbg_dur = 5;
+    int dbg_dur = 2;
     double dbg_value = futureInvestmentValue(dbg_inv, dbg_rate, dbg_dur);
     System.out.printf("DEBUG:\n\texample was\n\t\t%s\n\tYours is:\n\t\tfutureInvestmentValue(%.2f, %.2f, %d) returns %.2f\nDEBUG(end)\n", dbg_form, dbg_inv, dbg_rate, dbg_dur, dbg_value);
     //END DEBUGGING INFO
@@ -65,9 +65,9 @@ public class InvestmentValueLab05 {
         // investmentAmount * (1 + ((monthlyInterestRate * 0.01) /12 ) ) ^ (numberOfYears * 12)
         double rate = (0.01 * monthlyInterestRate) / 12;
         System.out.printf("DEBUG: (0.01 * monthlyInterestRate) / 12  is %f\n", rate, monthlyInterestRate);
-        double base =  1 + monthlyInterestRate;
+        double base =  1 + rate;
         int exp = years * 12;
-        double tmp = Math.pow(base, (double)exp);
+        double tmp = Math.pow(base, exp);
         System.out.printf("DEBUG: Math.pow(%.2f, %d) is %.2f\n", base, exp, tmp);
         return investmentAmount * tmp;
   }
