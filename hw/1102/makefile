@@ -1,10 +1,12 @@
 JFLAGS=-g
 JC=javac
+NAME=InvestmentValueLab05
 
-default: InvestmentValueLab05.class
+default: $(NAME).class
 
-InvestmentValueLab05.class: InvestmentValueLab05.java
-	$(JC) $(JFLAGS) InvestmentValueLab05.java
+$(NAME).class: $(NAME).java
+	$(JC) $(JFLAGS) $(NAME).java
+	java $(NAME)
 
 clean:
 	rm *.class
