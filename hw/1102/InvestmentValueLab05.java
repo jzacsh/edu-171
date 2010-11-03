@@ -1,6 +1,13 @@
 import java.util.Scanner;
 import java.lang.Math;
 
+/**
+ * An investment calculator based on user-supplied interest rate and loan duration (in years).
+ * - course:     COMP-171-801RL
+ * - assignment: pg 163; que. #5.7; due: 11/02  (5)
+ *
+ * @author Jonathan Zacsh <jzacsh@gmail.com>
+ */
 public class InvestmentValueLab05 {
   public static void main(String[] args) {
     // start professor requisite //////////////////////////////////////////
@@ -13,18 +20,21 @@ public class InvestmentValueLab05 {
     System.out.printf("%s\n%s", intro, summary);
 
 
+    //initialize variables for source clarity.
     double investment, interest, value = 0;
     int dur = 0;
 
-    System.out.printf("Years  Future Value\n");
+    System.out.printf("Years  Future Value\n");  //print table header
     //get input
     double[] data;
     data = new double[2];
-    getData(data);
+    getData(data);  //get user's desired values
+
+    //loop run claculations on user's input, based on 30 different loan
+    //durations.
     for (dur = 1; dur <= 30; dur++) {
-      //run algorithm
-      value = futureInvestmentValue(data[0], data[1], dur);
-      System.out.printf("%d        $%.2f\n", dur, value);
+      value = futureInvestmentValue(data[0], data[1], dur);  //run actual algorithm
+      System.out.printf("%d        $%.2f\n", dur, value);  //print data for the current duration
     }
   }
 
