@@ -28,6 +28,16 @@ public class InvestmentValueLab05 {
     }
   }
 
+  /**
+   * Calculates future investment on the following basic algorithm, broken down
+   * futher in inline comments:
+   *    investmentAmount * ((1 + monthlyInterestRate ) ^ (numberOfYears * 12))
+   *
+   * @param double investment amount
+   * @param double interest rate
+   * @param int    duration of the loan, in years.
+   * @return double  future investment.
+   */
   public static double futureInvestmentValue(
       double investmentAmount, double monthlyInterestRate, int years) {
 
@@ -39,6 +49,13 @@ public class InvestmentValueLab05 {
     return investmentAmount * tmp;
   }
 
+  /**
+   * Prompts user, on command line, for Investment Value (%) and Interest Rate ($).
+   *
+   * @param double a (preferrably) empty array of doubles for data to be passed
+   * back in.
+   * @return void
+   */
   public static void getData(double[] data) {
     Scanner stdin  = new Scanner(System.in);
     System.out.printf("Investment    : $");
