@@ -37,38 +37,34 @@ public class InvestmentValueLab05 {
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "\npg 163; que. #5.7; due: 11/02\n";
     // end professor requisite ////////////////////////////////////////////
+
+    //explain program
     String summary = "I'm an investment calculator. All I need is the interest rate and duration (in years).\n";
     System.out.printf("%s\n%s", intro, summary);
 
 
-    double investment, interest = 0;
+    double investment, interest, value = 0;
     int duration = 0;
+    //get input
+    System.out.printf("Investment    : $");
+    investment = stdin.nextDouble();
+    System.out.printf("Interest      : %%");
+    interest   = stdin.nextDouble();
+    System.out.printf("Duration (yrs): ");
+    duration   = stdin.nextInt();
 
-    //@TODO: make these values dynamic
-    investment = interest = 0;
-    duration = 0;
-
-    //double value = futureInvestmentValue(investment, interest, duration);
-
-    //START DEBUGGING INFO:
-    String dbg_form = "futureInvestmentValue(1000.00, 9, 2) returns 1196.41";
-    double dbg_inv = 10000;
-    double dbg_rate = 9;
-    int dbg_dur = 2;
-    double dbg_value = futureInvestmentValue(dbg_inv, dbg_rate, dbg_dur);
-    System.out.printf("DEBUG:\n\texample was\n\t\t%s\n\tYours is:\n\t\tfutureInvestmentValue(%.2f, %.2f, %d) returns %.2f\nDEBUG(end)\n", dbg_form, dbg_inv, dbg_rate, dbg_dur, dbg_value);
-    //END DEBUGGING INFO
+    //run algorithm
+    value = futureInvestmentValue(investment, interest, duration);
+    System.out.printf("$%.2f\n", value);
   }
 
   public static double futureInvestmentValue(
     double investmentAmount, double monthlyInterestRate, int years) {
         // investmentAmount * (1 + ((monthlyInterestRate * 0.01) /12 ) ) ^ (numberOfYears * 12)
         double rate = (0.01 * monthlyInterestRate) / 12;
-        System.out.printf("DEBUG: (0.01 * monthlyInterestRate) / 12  is %f\n", rate, monthlyInterestRate);
         double base =  1 + rate;
         int exp = years * 12;
         double tmp = Math.pow(base, exp);
-        System.out.printf("DEBUG: Math.pow(%.2f, %d) is %.2f\n", base, exp, tmp);
         return investmentAmount * tmp;
   }
 }
