@@ -4,7 +4,7 @@
 Computing the future investment value
 Write a method that computes future investment value at a given interest rate
 for a specified number of years. the future investment is determined using the
-formula in Exercise 2.9:
+formula in Exercise 2.9, as seen here:
   futureInvestmentValue = investmentAmount * (1 + monthlyInterestRate) ^ (numberOfYears * 12)
 
 Use the following method header:
