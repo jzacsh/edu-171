@@ -1,16 +1,3 @@
-12/14 Reading Files (11)
-  pg 300 #8.22
-
-Writing/Reading data
-write a program to create a file named Exercise8_22.txt if it does not exist.
-write one hundred integers created randomly into the file using text I/O.
-Integers are separated by spaces in the file,. Read the data back from the
-file and display the sorted data.
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
 12/14 Calendar Class (9)
   pg 257 #7.5
 
@@ -21,3 +8,14 @@ instance for the current date, and the methods get(GregorianCalendar.YEAR),
 get(GregorianCalendar.MONTH), get(GregorianCalendar.DAY_OF_MONTH) return the
 year, month, and day. Write a program to test this class to display the
 current year, month, and day.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+12/14 Reading Files (11)
+  pg 300 #8.22
+
+Writing/Reading data
+write a program to create a file named Exercise8_22.txt if it does not exist.
+write one hundred integers created randomly into the file using text I/O.
+Integers are separated by spaces in the file,. Read the data back from the
+file and display the sorted data.
