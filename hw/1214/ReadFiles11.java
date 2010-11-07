@@ -39,9 +39,11 @@ public class ReadFiles11 {
     java.io.Scanner fread = new java.io.Scanner(fd); //create file in
     fread.useDelimeter(DELIM);
 
-    //initialize array to hold data from file.
+    //initialize array to hold from file and sorted.
     int[] randoms;
     randoms = new int[QUANTITY];
+    int[] sorted;
+    sorted = new int[QUANTITY];
 
     //ensure file exists
     if (!fd.isFile()) {
@@ -56,8 +58,11 @@ public class ReadFiles11 {
       i++;
     }
 
+    //proof of unsorted data
+    FormatInts(randoms);
+
     //sort the data that's been read in
-    SortInts(randoms);
+    SortInts(randoms, sorted);
 
     //print neat table of data in randoms array
   }
@@ -93,9 +98,37 @@ public class ReadFiles11 {
    * Sorts an array of integers in ascending order.
    *
    * @param  int    an array of integers to be sorted in memory.
+   * @param  int    an empty array of integers to hold sorted data.
    * @return void
    */
-  public static void SortInts(int[] nums) {
-    //return a sorted
+  public static void SortInts(int[] datas, int[] sorted) {
+    double sentinal = -1;
+    double largest = sentinal;
+    int current = 0;
+    for (int s = 0; s < sorted.length; s++) {
+      for (int i = 0; i < datas.length; i++) {
+        if (datas[i] > largest && datas[i] != sentinal) {
+          sorted[s] = datas[i];
+          largest = datas[i];
+          current = i;
+        }
+      }
+      datas[current][0] = sentinal;
+      largest = sentinal;
+    }
+    return;
+  }
+
+  /**
+   * Prints a consistent, single formatting for any given array of integers.
+   *
+   * @param int  array of integers
+   * @return void
+   */
+  public statis void FormatInts(int[] datas) {
+    int size = datas.length;
+    for (int i = 0; i < size; i++) {
+      System.out.printf("%d\n", datas[i]);
+    }
   }
 }
