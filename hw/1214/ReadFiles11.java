@@ -33,13 +33,15 @@ public class ReadFiles11 {
       AppendTxtFile(filename);
     }
 
-    //call sort of data from file
+    //initialize array to hold data from file.
     int randoms = 0;
+
     //read in data from file, explode into int array randoms
 
+    //sort the data that's been read in
     SortInts();
 
-
+    //print neat table of data in randoms array
   }
 
   /**
