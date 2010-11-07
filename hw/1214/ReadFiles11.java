@@ -83,10 +83,10 @@ public class ReadFiles11 {
     int i = 0;
     while (i < 100) {
       int r = (int)(Math.Random() * MAX);
-      try (e) {
+      try {
         f.printf("%d%c", r, DELIM);
       }
-      catch {
+      catch (IOException e) {
         f.close();
         return 1;
       }
@@ -116,7 +116,7 @@ public class ReadFiles11 {
           current = i;
         }
       }
-      datas[current][0] = sentinal;
+      datas[current] = sentinal;
       largest = sentinal;
     }
     return;
@@ -128,7 +128,7 @@ public class ReadFiles11 {
    * @param int  array of integers
    * @return void
    */
-  public statis void FormatInts(int[] datas) {
+  public static void FormatInts(int[] datas) {
     int size = datas.length;
     for (int i = 0; i < size; i++) {
       System.out.printf("%d\n", datas[i]);
