@@ -26,6 +26,8 @@ public class ReadFiles11 {
     //request user input of file name
     String filename;
     filename = stdin.nextString();
+    final int  QUANTITY = 100; //number of datas to be passed around
+    final char DELIM = ' '; //delimeter to use for seperating datas
 
     //insure data is available
     if (/* filename doesn't exists*/) {
@@ -34,7 +36,8 @@ public class ReadFiles11 {
     }
 
     //initialize array to hold data from file.
-    int randoms = 0;
+    int[] randoms = 0;
+    randoms = new int[100];
 
     //read in data from file, explode into int array randoms
 
@@ -52,7 +55,7 @@ public class ReadFiles11 {
    * @return int     status code of file creation. 0 upon success.
    */
   public static int AppenTxtFile(String[] fname) {
-    //generate 100 ints into fname.txt
+    //generate [QUANTITY], [DELIM] seperated, ints into fname.txt
     return 0;
   }
 
