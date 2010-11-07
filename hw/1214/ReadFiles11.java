@@ -23,21 +23,24 @@ public class ReadFiles11 {
            summary += "file and display the sorted data.\n";
     System.out.printf("%s\n%s\n", intro, summary);
 
-    //request user input of file name
-    String filename;
-    filename = stdin.nextString();
+    //set constants
     final int  QUANTITY = 100; //number of datas to be passed around
     final char DELIM = ' '; //delimeter to use for seperating datas
 
-    //insure data is available
-    if (/* filename doesn't exists*/) {
+    //request user input of file name
+    String filename;
+    filename = stdin.nextString();
+    java.io.File file = new java.io.File("./" + filename + ".txt");
+
+    //ensure data is available
+    if (!file.isFile()) {
       //file does not exist, create now.
-      AppendTxtFile(filename);
+      AppendTxtFile(file);
     }
 
     //initialize array to hold data from file.
     int[] randoms = 0;
-    randoms = new int[100];
+    randoms = new int[QUANTITY];
 
     //read in data from file, explode into int array randoms
 
@@ -48,13 +51,13 @@ public class ReadFiles11 {
   }
 
   /**
-   * Generates 100 random integers which are immediately passed into a file on
+   * Generates [QUANT] random integers which are immediately passed into a file on
    * disk.
    *
-   * @param  string  string used in file name. be aware '.txt' will be appended
+   * @param  object  File object being used
    * @return int     status code of file creation. 0 upon success.
    */
-  public static int AppenTxtFile(String[] fname) {
+  public static int AppenTxtFile(java.io.File f) {
     //generate [QUANTITY], [DELIM] seperated, ints into fname.txt
     return 0;
   }
