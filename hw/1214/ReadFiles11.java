@@ -11,7 +11,13 @@ import java.util.Scanner;
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
 public class ReadFiles11 {
+  //set constants
+  public static final int MAX = 300; //highest value for random number generation
+  public static final int QUANTITY = 100; //number of datas to be passed around
+  public static final String DELIM = " "; //delimeter to use for seperating datas
+
   public static void main(String[] args) {
+
     Scanner stdin = new Scanner(System.in);
 
     //printed documentation
@@ -23,11 +29,6 @@ public class ReadFiles11 {
            summary += "file and display the sorted data.\n";
     System.out.printf("%s\n%s\n", intro, summary);
 
-    //set constants
-    final int  MAX = 300; //highest value for random number generation
-    final int  QUANTITY = 100; //number of datas to be passed around
-    final char DELIM = ' '; //delimeter to use for seperating datas
-
     //request user input of file name
     String filename;
     filename = "./" + stdin.next() + ".txt";
@@ -35,7 +36,7 @@ public class ReadFiles11 {
     //file objects
     java.io.File fd = new java.io.File(filename); //create file descriptor
     java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
-    java.util.Scanner fread = new java.util.Scanner(fd); //create file in
+    java.util.Scanner fread = new java.util.Scanner(fd).useDelimeter(DELIM); //create file in
 
     //initialize array to hold from file and sorted.
     int[] randoms;
@@ -55,27 +56,26 @@ public class ReadFiles11 {
 
     //read in data from file, explode into int array randoms
     int i = 0;
-    fread.useDelimeter(DELIM);
-    while (fread.hasNext() && i <= QUANT) {
+    while (fread.hasNext() && i <= QUANTITY) {
       randoms[i] = fread.nextInt();
       i++;
     }
     fread.close();
 
     //proof of unsorted data
-    printf("The UNsorted, random array is:\n");
+    System.out.printf("The UNsorted, random array is:\n");
     FormatInts(randoms);
 
     //sort the data that's been read in
     SortInts(randoms, sorted);
 
     //print neat table of data in randoms array
-    printf("The SORTED, array is:\n");
+    System.out.printf("The SORTED, array is:\n");
     FormatInts(sorted);
   }
 
   /**
-   * Generates [QUANT] random integers which are immediately passed into a file on
+   * Generates [QUANTITY] random integers which are immediately passed into a file on
    * disk.
    *
    * @param  object  PrintWriter object being used
@@ -83,12 +83,12 @@ public class ReadFiles11 {
    *  - 0 upon success
    *  - 1 upon failure.
    */
-  public static int AppenTxtFile(PrintWriter f) {
+  public static int AppendTxtFile(PrintWriter f) {
     int i = 0;
     while (i < 100) {
-      int r = (int)(Math.Random() * MAX);
+      int r = (int)(Math.random() * MAX);
       try {
-        f.printf("%d%c", r, DELIM);
+        f.printf("%d%s", r, DELIM);
       }
       catch (IOException e) {
         f.close();
@@ -109,8 +109,8 @@ public class ReadFiles11 {
    * @return void
    */
   public static void SortInts(int[] datas, int[] sorted) {
-    double sentinal = -1;
-    double largest = sentinal;
+    int sentinal = -1;
+    int largest = sentinal;
     int current = 0;
     for (int s = 0; s < sorted.length; s++) {
       for (int i = 0; i < datas.length; i++) {
