@@ -13,6 +13,14 @@ import java.util.Scanner;
 public class WeekHours {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
+
+    //printed documentation
+    String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
+    intro += "pg 207; que. #6.23; due: 12/07\n";
+    String summary  = "Class for managing a given week of employee hours.\n";
+           summary += "prints string a table displaying the total hours worked by each employee.\n";
+    System.out.printf("%s\n%s\n", intro, summary);
+
     int emps = 8;
     int days = 7;
     double totals[][]  = new double[emps][2];
@@ -52,17 +60,6 @@ public class WeekHours {
   }
 
   /**
-   * Prints strings passed in if internal boolean is set.
-   *
-   * @param string debug statement
-   * @return void
-   */
-  public static void OldDebug(String dbg) {
-    if (true)
-      System.out.printf("\nDEBUG:\t%s\n", dbg);
-  }
-
-  /**
    *
    */
   public static void Sort(double[][] totals, double[][] sorted) {
@@ -82,55 +79,6 @@ public class WeekHours {
       largest = sentinal;
     }
     return;
-  }
-
-  /**
-   * Sort and Print a given array representing another two dimensional array of data.
-   *
-   * @param  double array of values to sort and base the print off of.
-   * @param  double two dimensional array to be printed
-   * @return void
-   */
-  public static void SortOld(double[] weight, double[][] data) {
-    int largest = -99;
-    int size = weight.length;
-    boolean finished = false;
-    double total = 0;
-    double sentinal = -1;
-
-    OldDebug("size of array of totals is: "+size+".\n");
-
-    //print table header
-    String header = "em |  su   m   t   w  th   f  sa  (totals)\n";
-          header += "--------------------------------";
-    System.out.printf("%s", header);
-    do {
-      //find the next hardest working employee
-      for (int i = 0; i < size; i++) {
-        finished = true;
-        //is this the hardest working employee, so far?
-        if (weight[i] != sentinal && weight[i] >= largest) {
-          OldDebug("weight["+i+"] = "+weight[i]+" is, so far, the largest.");
-          largest = i;
-          total = weight[i];
-          weight[i] = sentinal;
-          finished = false;
-        }
-      }
-
-      OldDebug("weight["+largest+"] = "+total+" _is_ the largest.");
-      //print next hardest working employee's hours
-      if (!finished) {
-        System.out.printf("\n%1x  | ", largest, data[largest]);
-        int amt = data[largest].length;
-        for (int s = 0; s < amt; s++)
-          System.out.printf("  %-2.0f", data[largest][s]);
-        System.out.printf(" (%2.2f)", total);
-      }
-
-    } while(!finished);
-
-    System.out.printf("\n");
   }
 
   /**
