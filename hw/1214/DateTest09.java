@@ -9,7 +9,7 @@ import java.util.Calendar;
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
 
-public class DateTest {
+public class DateTest09 {
   public static void main(String[] args) {
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "pg 257; que. #7.5; due: 12/14\n";
