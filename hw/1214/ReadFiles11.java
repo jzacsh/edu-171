@@ -30,14 +30,12 @@ public class ReadFiles11 {
 
     //request user input of file name
     String filename;
-    filename = stdin.nextString();
-    filename = "./" + filename + ".txt";
+    filename = "./" + stdin.next() + ".txt";
 
     //file objects
     java.io.File fd = new java.io.File(filename); //create file descriptor
     java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
-    java.io.Scanner fread = new java.io.Scanner(fd); //create file in
-    fread.useDelimeter(DELIM);
+    java.util.Scanner fread = new java.util.Scanner(fd); //create file in
 
     //initialize array to hold from file and sorted.
     int[] randoms;
@@ -48,15 +46,21 @@ public class ReadFiles11 {
     //ensure file exists
     if (!fd.isFile()) {
       //file does not exist, create now.
-      AppendTxtFile(fwrite);
+      int e = AppendTxtFile(fwrite);
+      if (e != 0) {
+        System.err.printf("Failed to create new file\n");
+        return;
+      }
     }
 
     //read in data from file, explode into int array randoms
     int i = 0;
+    fread.useDelimeter(DELIM);
     while (fread.hasNext() && i <= QUANT) {
       randoms[i] = fread.nextInt();
       i++;
     }
+    fread.close();
 
     //proof of unsorted data
     printf("The UNsorted, random array is:\n");
@@ -79,7 +83,7 @@ public class ReadFiles11 {
    *  - 0 upon success
    *  - 1 upon failure.
    */
-  public static int AppenTxtFile(java.io.File f) {
+  public static int AppenTxtFile(PrintWriter f) {
     int i = 0;
     while (i < 100) {
       int r = (int)(Math.Random() * MAX);
