@@ -59,12 +59,15 @@ public class ReadFiles11 {
     }
 
     //proof of unsorted data
+    printf("The UNsorted, random array is:\n");
     FormatInts(randoms);
 
     //sort the data that's been read in
     SortInts(randoms, sorted);
 
     //print neat table of data in randoms array
+    printf("The SORTED, array is:\n");
+    FormatInts(sorted);
   }
 
   /**
