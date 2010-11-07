@@ -1,0 +1,18 @@
+java WeekHours
+
+Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
+pg 207; que. #6.23; due: 12/07
+
+Class for managing a given week of employee hours.
+prints string a table displaying the total hours worked by each employee.
+
+em |  su  m   t   w   th  f   sa | [totals]
+-------------------------------------------
+7 |   6   3   5   9   2   7   9  |   41.00
+6 |   3   7   4   8   3   8   4  |   37.00
+0 |   2   4   3   4   5   8   8  |   34.00
+4 |   3   5   4   3   6   3   8  |   32.00
+3 |   9   3   4   7   3   4   1  |   31.00
+1 |   7   3   4   3   3   4   4  |   28.00
+5 |   3   4   4   6   3   4   4  |   28.00
+2 |   3   3   4   3   3   2   2  |   20.00
