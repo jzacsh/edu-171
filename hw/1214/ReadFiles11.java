@@ -48,6 +48,9 @@ public class ReadFiles11 {
           System.exit(1);
         }
       }
+      else {
+        System.out.printf("File already exists, utilizing existing data...\n");
+      }
 
       java.util.Scanner fread = new java.util.Scanner(fd); //create file in
       fread.useDelimiter(DELIM);
