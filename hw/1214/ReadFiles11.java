@@ -32,7 +32,7 @@ public class ReadFiles11 {
     //request user input of file name
     System.out.printf("name of new file? ");
     String filename;
-    filename = "./" + stdin.next() + ".txt";
+    filename = stdin.next() + ".txt";
 
     //file objects
     java.io.File fd = new java.io.File(filename); //create file descriptor
