@@ -30,7 +30,7 @@ public class ReadFiles11 {
     System.out.printf("%s\n%s\n", intro, summary);
 
     //request user input of file name
-    System.out.printf("name of new file? ");
+    System.out.printf("intended name of file? ");
     String filename;
     filename = stdin.next() + ".txt";
 
@@ -40,6 +40,7 @@ public class ReadFiles11 {
       //ensure file exists
       if (!fd.exists()) {
         //file does not exist, create now.
+        System.out.printf("File did not exist, creating it now...\n");
         java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
         int e = AppendTxtFile(fwrite);
         if (e != 0) {
