@@ -93,7 +93,7 @@ public class ReadFiles11 {
    */
   public static int AppendTxtFile(PrintWriter f) {
     int i = 0;
-    while (i < 100) {
+    while (i < QUANTITY) {
       int r = (int)(Math.random() * MAX);
       f.printf("%d%s", r, DELIM);
       i++;
