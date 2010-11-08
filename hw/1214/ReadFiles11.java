@@ -35,8 +35,15 @@ public class ReadFiles11 {
 
     //file objects
     java.io.File fd = new java.io.File(filename); //create file descriptor
-    java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
-    java.util.Scanner fread = new java.util.Scanner(fd).useDelimeter(DELIM); //create file in
+    try {
+      java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
+      java.util.Scanner fread = new java.util.Scanner(fd); //create file in
+      fread.useDelimiter(DELIM);
+    }
+    catch (FileNotFoundException e) {
+      e.printStackTrace();
+      System.exit(1);
+    }
 
     //initialize array to hold from file and sorted.
     int[] randoms;
@@ -45,7 +52,7 @@ public class ReadFiles11 {
     sorted = new int[QUANTITY];
 
     //ensure file exists
-    if (!fd.isFile()) {
+    if (!fd.exists()) {
       //file does not exist, create now.
       int e = AppendTxtFile(fwrite);
       if (e != 0) {
@@ -87,13 +94,7 @@ public class ReadFiles11 {
     int i = 0;
     while (i < 100) {
       int r = (int)(Math.random() * MAX);
-      try {
-        f.printf("%d%s", r, DELIM);
-      }
-      catch (IOException e) {
-        f.close();
-        return 1;
-      }
+      f.printf("%d%s", r, DELIM);
       i++;
     }
     f.close();
