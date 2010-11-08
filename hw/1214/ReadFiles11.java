@@ -40,7 +40,7 @@ public class ReadFiles11 {
       //ensure file exists
       if (!fd.exists()) {
         //file does not exist, create now.
-        System.out.printf("File did not exist, creating it now...\n");
+        System.out.printf("File, %s, did not exist. Creating it now...\n", filename);
         java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
         int e = AppendTxtFile(fwrite);
         if (e != 0) {
@@ -49,7 +49,7 @@ public class ReadFiles11 {
         }
       }
       else {
-        System.out.printf("File already exists, utilizing existing data...\n");
+        System.out.printf("File, %s, already exists, utilizing existing data...\n", filename);
       }
 
       java.util.Scanner fread = new java.util.Scanner(fd); //create file in
