@@ -30,6 +30,7 @@ public class ReadFiles11 {
     System.out.printf("%s\n%s\n", intro, summary);
 
     //request user input of file name
+    System.out.printf("name of new file? ");
     String filename;
     filename = "./" + stdin.next() + ".txt";
 
@@ -39,46 +40,46 @@ public class ReadFiles11 {
       java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
       java.util.Scanner fread = new java.util.Scanner(fd); //create file in
       fread.useDelimiter(DELIM);
+
+      //initialize array to hold from file and sorted.
+      int[] randoms;
+      randoms = new int[QUANTITY];
+      int[] sorted;
+      sorted = new int[QUANTITY];
+
+      //ensure file exists
+      if (!fd.exists()) {
+        //file does not exist, create now.
+        int e = AppendTxtFile(fwrite);
+        if (e != 0) {
+          System.err.printf("Failed to create new file\n");
+          return;
+        }
+      }
+
+      //read in data from file, explode into int array randoms
+      int i = 0;
+      while (fread.hasNext() && i <= QUANTITY) {
+        randoms[i] = fread.nextInt();
+        i++;
+      }
+      fread.close();
+
+      //proof of unsorted data
+      System.out.printf("The UNsorted, random array is:\n");
+      FormatInts(randoms);
+
+      //sort the data that's been read in
+      SortInts(randoms, sorted);
+
+      //print neat table of data in randoms array
+      System.out.printf("The SORTED, array is:\n");
+      FormatInts(sorted);
     }
     catch (FileNotFoundException e) {
       e.printStackTrace();
       System.exit(1);
     }
-
-    //initialize array to hold from file and sorted.
-    int[] randoms;
-    randoms = new int[QUANTITY];
-    int[] sorted;
-    sorted = new int[QUANTITY];
-
-    //ensure file exists
-    if (!fd.exists()) {
-      //file does not exist, create now.
-      int e = AppendTxtFile(fwrite);
-      if (e != 0) {
-        System.err.printf("Failed to create new file\n");
-        return;
-      }
-    }
-
-    //read in data from file, explode into int array randoms
-    int i = 0;
-    while (fread.hasNext() && i <= QUANTITY) {
-      randoms[i] = fread.nextInt();
-      i++;
-    }
-    fread.close();
-
-    //proof of unsorted data
-    System.out.printf("The UNsorted, random array is:\n");
-    FormatInts(randoms);
-
-    //sort the data that's been read in
-    SortInts(randoms, sorted);
-
-    //print neat table of data in randoms array
-    System.out.printf("The SORTED, array is:\n");
-    FormatInts(sorted);
   }
 
   /**
