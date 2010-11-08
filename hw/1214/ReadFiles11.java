@@ -37,7 +37,17 @@ public class ReadFiles11 {
     //file objects
     java.io.File fd = new java.io.File(filename); //create file descriptor
     try {
-      java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
+      //ensure file exists
+      if (!fd.exists()) {
+        //file does not exist, create now.
+        java.io.PrintWriter fwrite = new java.io.PrintWriter(filename); //create file out
+        int e = AppendTxtFile(fwrite);
+        if (e != 0) {
+          System.err.printf("Failed to create new file\n");
+          System.exit(1);
+        }
+      }
+
       java.util.Scanner fread = new java.util.Scanner(fd); //create file in
       fread.useDelimiter(DELIM);
 
@@ -46,16 +56,6 @@ public class ReadFiles11 {
       randoms = new int[QUANTITY];
       int[] sorted;
       sorted = new int[QUANTITY];
-
-      //ensure file exists
-      if (!fd.exists()) {
-        //file does not exist, create now.
-        int e = AppendTxtFile(fwrite);
-        if (e != 0) {
-          System.err.printf("Failed to create new file\n");
-          return;
-        }
-      }
 
       //read in data from file, explode into int array randoms
       int i = 0;
@@ -137,7 +137,8 @@ public class ReadFiles11 {
   public static void FormatInts(int[] datas) {
     int size = datas.length;
     for (int i = 0; i < size; i++) {
-      System.out.printf("%d\n", datas[i]);
+      System.out.printf("%d ", datas[i]);
     }
+    System.out.printf("\n");
   }
 }
