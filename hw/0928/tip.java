@@ -5,7 +5,7 @@ import java.util.Scanner;
  * calcuate (and return) a new grand-total and amount of the tip.
  *   prints string containing tip and bill-total
  * - course:     COMP-171-801RL
- * - assignment: pg 63; que. #2.5; due: 09/28
+ * - assignment: pg 63; que. #2.5; due: 09/28  (lab# 01)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  * @return void
@@ -17,7 +17,7 @@ public class tip {
     Scanner input = new Scanner(System.in);
 
     //explain program purpose
-    String assign = "\nby: Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\nAssignment: pg 63; que. #2.5; due: 09/28.\n";
+    String assign = "\nby: Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\nAssignment: pg 63; que. #2.5; due: 09/28.  (lab# 01)\n";
     String intro  = "\nHello, I calculate a tip and bill-total based on\nyour bill's sub-total and your chosen gratuity.\n";
     System.out.printf("%s\n%s\n", assign, intro);
 
