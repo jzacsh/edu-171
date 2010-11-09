@@ -4,7 +4,7 @@ import java.lang.Math;
 /**
  * An investment calculator based on user-supplied interest rate and loan duration (in years).
  * - course:     COMP-171-801RL
- * - assignment: pg 163; que. #5.7; due: 11/02  (5)
+ * - assignment: pg 163; que. #5.7; due: 11/02  (lab# 05)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
@@ -12,7 +12,7 @@ public class InvestmentValueLab05 {
   public static void main(String[] args) {
     // start professor requisite //////////////////////////////////////////
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    intro += "\npg 163; que. #5.7; due: 11/02\n";
+    intro += "\npg 163; que. #5.7; due: 11/02  (lab# 05)\n";
     // end professor requisite ////////////////////////////////////////////
 
     //explain program

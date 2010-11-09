@@ -2,7 +2,7 @@ $ java InvestmentValueLab05
 
 Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
 
-pg 163; que. #5.7; due: 11/02
+pg 163; que. #5.7; due: 11/02  (lab# 05)
 
 I'm an investment calculator. All I need is the interest rate and duration (in years).
 Years  Future Value
