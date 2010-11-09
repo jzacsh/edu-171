@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Date;
 import java.lang.Math;
 import java.io.*;
 
@@ -9,20 +10,49 @@ import java.io.*;
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
 public class Account12 {
+
   //default constructor
   public Account12() {
     id = 0;
     balance = 0;
     anualInterestRate = 0;
-    //dateCreated = //;
+    Date dateCreated = new Date();
   }
 
   //constructor
-  public Account12(int acctId, double acctBal, double acctRate, acctDate) {
+  public Account12(int acctId, double acctBal, double acctRate, Date acctDate) {
     id = acctId;
     balance = acctBal;
     anualInterestRate = acctRate;
     dateCreated = acctDate;
+  }
+
+
+  //accessors:
+
+  public getId() {
+    //codez
+  }
+
+  public getBalance() {
+    //codez
+  }
+
+  public getRate() {
+    //codez
+  }
+
+
+  //mutators:
+
+  public setId() {
+    //codez
+
+  public setBalance() {
+    //codez
+
+  public setRate() {
+    //codez
   }
 
   public static void main(String[] args) {
@@ -34,11 +64,7 @@ public class Account12 {
     String summary = "\n";
     System.out.printf("\n%s\n%s", intro, summary);
 
-    //account datas:
-    int id = 0;                    //account id
-    double balance = 0;            //account balance
-    double annualInterestRate = 0; //interest rate
-//    dateCreated; //account creation date
+    //codez
   }
 }
 
