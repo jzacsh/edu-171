@@ -2,19 +2,19 @@ backtracking:
   - rename all classes (and subsequently, filenames) to:
     - CapsCamel instead of capsCamel.
 
-at request of professor:
-  - add inline commenting to each bit of code to explain process
-  - add doxygen commenting to existing classes and methods to include:
+at request of PROFESSOR:
+  x add inline commenting to each bit of code to explain process
+  x add doxygen commenting to existing classes and methods to include:
      x name,
      x course number,
      x assignment number
-     - lab number
+     x lab number
 
-  - modify existing output of each program to include:
+  x modify existing output of each program to include:
      x name,
      x course number,
      x assignment number
-     - lab number
+     x lab number
 
 [ using edition 6 of book ]
 LABS:
@@ -23,11 +23,10 @@ x 02   pg65;  #2.13   10/05
 x 03   pg94;  #3.11   10/12
 x 04   pg125; #4.21   10/19
 x 05   pg163; #5.7    11/02
-x 06   pg167; #5.25   11/09
+- 06   pg167; #5.25   11/09
 x 07   pg205; #6.7    11/16
-x 08   pg205; #6.12   11/23
+x 08   pg205; #6.13   11/23
 x 09   pg257; #7.5    12/14
 x 10   pg207; #6.23   12/07
-x 11   pg300; #8.19   12/14
+x 11   pg300; #8.22   12/14
 - 12   pg256; #7.3    12/21
-- 13   ; #   
