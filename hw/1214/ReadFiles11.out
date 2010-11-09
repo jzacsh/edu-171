@@ -1,7 +1,7 @@
 jzacsh@blackbox$ java ReadFiles11
 
 Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
-pg 300; que. #8.22; due: 12/14
+pg 300; que. #8.22; due: 12/14  (lab# 11)
 
 Write a program to create a file named Exercise8_22.txt if it does not exist
 write one hundred integers created randomly into the file using text I/O.
@@ -19,7 +19,7 @@ The SORTED, array is:
 jzacsh@blackbox$ java ReadFiles11
 
 Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
-pg 300; que. #8.22; due: 12/14
+pg 300; que. #8.22; due: 12/14  (lab# 11)
 
 Write a program to create a file named Exercise8_22.txt if it does not exist
 write one hundred integers created randomly into the file using text I/O.

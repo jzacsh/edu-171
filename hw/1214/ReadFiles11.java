@@ -6,7 +6,7 @@ import java.util.Scanner;
  * (like sorting numbers). Tazks will be seperated into methods as necesary.
  *   Writing/Reading data
  * - course:     COMP-171-801RL
- * - assignment: pg 300; que. #8.22; due: 12/14
+ * - assignment: pg 300; que. #8.22; due: 12/14  (lab# 11)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
@@ -22,7 +22,7 @@ public class ReadFiles11 {
 
     //printed documentation
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    intro += "pg 300; que. #8.22; due: 12/14\n";
+    intro += "pg 300; que. #8.22; due: 12/14  (lab# 11)\n";
     String summary  = "Write a program to create a file named Exercise8_22.txt if it does not exist\n";
            summary += "write one hundred integers created randomly into the file using text I/O.\n";
            summary += "Integers are separated by spaces in the file,. Read the data back from the\n";
