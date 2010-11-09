@@ -5,7 +5,7 @@ import java.util.Scanner;
  *   prints string a table displaying the total hours worked by each employee
  *   for a given week.
  * - course:     COMP-171-801RL
- * - assignment: pg 207; que. #6.23; due: 12/07
+ * - assignment: pg 207; que. #6.23; due: 12/07  (lab# 10)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  * @return void
@@ -16,7 +16,7 @@ public class WeekHours {
 
     //printed documentation
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    intro += "pg 207; que. #6.23; due: 12/07\n";
+    intro += "pg 207; que. #6.23; due: 12/07  (lab# 10)\n";
     String summary  = "Class for managing a given week of employee hours.\n";
            summary += "prints string a table displaying the total hours worked by each employee.\n";
     System.out.printf("%s\n%s\n", intro, summary);

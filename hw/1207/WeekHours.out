@@ -1,7 +1,7 @@
 java WeekHours
 
 Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
-pg 207; que. #6.23; due: 12/07
+pg 207; que. #6.23; due: 12/07  (lab# 10)
 
 Class for managing a given week of employee hours.
 prints string a table displaying the total hours worked by each employee.
