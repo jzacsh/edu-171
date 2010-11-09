@@ -4,7 +4,7 @@ import java.util.Calendar;
  * Prints current date information, as proof of concept for the Calendar class.
  *   test the Date bclass
  * - course:     COMP-171-801RL
- * - assignment: pg 257; que. #7.5; due: 12/14
+ * - assignment: pg 257; que. #7.5; due: 12/14  (lab# 09)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
@@ -12,7 +12,7 @@ import java.util.Calendar;
 public class DateTest09 {
   public static void main(String[] args) {
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    intro += "pg 257; que. #7.5; due: 12/14\n";
+    intro += "pg 257; que. #7.5; due: 12/14  (lab# 09)\n";
     String summary = "I'm a class designed to test the calendar utilities provided by Java.";
     System.out.printf("%s\n%s\n", intro, summary);
 
