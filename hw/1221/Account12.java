@@ -9,6 +9,22 @@ import java.io.*;
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
 public class Account12 {
+  //default constructor
+  public Account12() {
+    id = 0;
+    balance = 0;
+    anualInterestRate = 0;
+    //dateCreated = //;
+  }
+
+  //constructor
+  public Account12(int acctId, double acctBal, double acctRate, acctDate) {
+    id = acctId;
+    balance = acctBal;
+    anualInterestRate = acctRate;
+    dateCreated = acctDate;
+  }
+
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
 
