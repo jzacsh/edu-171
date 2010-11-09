@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
  * Calculates year's interest based on user-provided interest rate and balance.
  *   prints string Total Interest
  * - course:     COMP-171-801RL
- * - assignment: pg 65; que. #2.13; due: 10/05
+ * - assignment: pg 65; que. #2.13; due: 10/05  (lab# 02)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  * @return void
@@ -14,7 +14,7 @@ public class interest {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    intro += "assignment: pg 65; que. #2.13; due: 10/05\n";
+    intro += "assignment: pg 65; que. #2.13; due: 10/05  (lab# 02)\n";
     System.out.printf("%s\nI calculate Annual Interest, given an interest rate and balance.\n", intro);
     float balance = 0, rate = 0, interest = 0;
 
