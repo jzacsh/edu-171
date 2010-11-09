@@ -9,7 +9,7 @@ import java.io.*;
  *   prints string Table of possible monthly and total payments based on a
  *   range of interest rates.
  * - course:     COMP-171-801RL
- * - assignment: pg 125; que. #4.21; due: 10/19
+ * - assignment: pg 125; que. #4.21; due: 10/19  (lab# 04)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  * @return void
@@ -20,7 +20,7 @@ public class loan {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    intro += "pg 125; que. #4.21; due: 10/19\n";
+    intro += "pg 125; que. #4.21; due: 10/19  (lab# 04)\n";
     String summary = "\nI'm a loan calculator.";
     summary += "\nI'll tell you the Monthly Payments at various interest rates,";
     summary += "\ngiven a loan aount and loan duration.\n";
