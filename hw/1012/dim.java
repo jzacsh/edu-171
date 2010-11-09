@@ -7,7 +7,7 @@ import java.io.*;
  * account leap year.
  *   prints string Description of days in month
  * - course:     COMP-171-801RL
- * - assignment: pg 94; que. #3.11; due: 10/12
+ * - assignment: pg 94; que. #3.11; due: 10/12  (lab# 03)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  * @return void
@@ -17,7 +17,7 @@ public class dim {
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
     String intro = "\n\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    intro += "\npg 94; que. #3.11; due: 10/12\n";
+    intro += "\npg 94; que. #3.11; due: 10/12  (lab# 03)\n";
     String summary = "I'm a smart calendar, I tell you the days in the month you've specifiedi\n.";
     summary += "You *should* use `/usr/bin/cal`... but whatever.\n";
     System.out.printf("%s\n%s", intro, summary);
