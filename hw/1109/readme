@@ -1,5 +1,5 @@
-11-09  Time Conversions (6)
-  pg 167, #5.25
+11-09  Time Conversions
+  pg 167, #5.25  (lab# 06)
 
 converting milliseconds to hours, minutes, and seconds
 Write a method that converts milliseconds to hours, minutes, and seconds using
