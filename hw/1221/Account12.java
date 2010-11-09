@@ -18,7 +18,11 @@ public class Account12 {
     String summary = "\n";
     System.out.printf("\n%s\n%s", intro, summary);
 
-    //codez
+    //account datas:
+    int id = 0;                    //account id
+    double balance = 0;            //account balance
+    double annualInterestRate = 0; //interest rate
+//    dateCreated; //account creation date
   }
 }
 
