@@ -6,7 +6,7 @@ import java.util.Scanner;
  * prints a string 
  *   description of newly created array, as proof of functioning algorithm.
  * - course:     COMP-171-801RL
- * - assignment: pg 205; que. #6.13; due: 11/23
+ * - assignment: pg 205; que. #6.13; due: 11/23  (lab# 08)
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  * @return void
@@ -17,7 +17,7 @@ public class darray {
     Scanner stdin = new Scanner(System.in);
 
     String stamping = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
-    stamping += "pg 205; que. #6.13; due: 11/23\n";
+    stamping += "pg 205; que. #6.13; due: 11/23  (lab# 08)\n";
     String intro = "Hello, I am going to double the size of your";
     intro += " array,\nhow large is your array?";
 

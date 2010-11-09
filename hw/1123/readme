@@ -1,6 +1,6 @@
-pg 205 #6.13 (8)
+pg 205 #6.13
   Reverse arrays
-  due 11/23
+  due 11/23  (lab# 08)
 
 (increasing array size)
 Once an array is created, its size is fixed. Occasionally, you need to add
