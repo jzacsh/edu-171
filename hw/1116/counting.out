@@ -2,7 +2,7 @@ jznix::du/comp171/src/hw/1116$ java counting
 
 
 Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
-pg 205; que. #6.7; due: 11/16
+pg 205; que. #6.7; due: 11/16  (lab# 07)
 
 Below I will generate a 'random' number between 0 and 9, 100 times.
 Then I will calculate the occurances of each number.

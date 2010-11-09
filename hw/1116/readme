@@ -1,5 +1,5 @@
-11/16  Counting Digits (7)
-  pg 205 #6.7
+11/16  Counting Digits
+  pg 205 #6.7  (lab# 07)
 
 (counting single digits)
 Write a program that generates one hundred random integers between 0 and 9 and
