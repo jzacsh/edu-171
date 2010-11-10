@@ -11,13 +11,15 @@ import java.io.*;
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
 public class Account12 {
+  int id;
+  double balance;
+  double annualInterestRate;
+  Date dateCreated;
 
   //default constructor
   public Account12() {
-    id = 0;
-    balance = 0;
-    annualInterestRate = 0;
-    Date dateCreated = new Date();
+    Date now = new Date();
+    this(0, 0, 0, now);
   }
 
   //constructor
