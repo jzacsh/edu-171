@@ -4,6 +4,7 @@ import java.io.*;
 
 /**
  * Very basic class for managing a bank account.
+ *
  * - course:     COMP-171-801RL
  * - assignment: pg 256; que. #7.3; due: 12/21  (lab# 12)
  *
@@ -47,7 +48,7 @@ public class Account12 {
   }
 
   public getMonthlyInterestRate() {
-    //codez
+    return annualInterestRate / 12;
   }
 
 
@@ -75,6 +76,7 @@ public class Account12 {
     balance += amt;
   }
 
+
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
 
@@ -83,8 +85,6 @@ public class Account12 {
            intro += "pg 256; que. #7.3; due: 12/21  (lab# 12)\n";
     String summary = "This is a very basic class for managing a bank account.\n";
     System.out.printf("\n%s\n%s", intro, summary);
-
-    //codez
   }
 }
 
