@@ -11,14 +11,13 @@ import java.util.Date;
 public class epochMilli06 {
   public static String convertMillis(long millis) {
     long seconds = millis / 1000; // rational base of measure
-    long time;
 
-    //hours:
-    time += seconds / (60 * 60); // 60 seconds, 60 minutes per hour.
-    //minutes:
-    time += (seconds % (60 * 60)) / 60; // just minutes
-    //seconds:
-    time += (seconds % (60 * 60)) % 60; //remainder
+    long hrs = seconds / (60 * 60); // 60 seconds, 60 minutes per hour.
+    long min = (seconds % (60 * 60)) / 60; // just minutes
+    long sec = (seconds % (60 * 60)) % 60; //remainder
+
+    String time;
+    //concatenate hrs, min, sec with ':' colon.
 
     return time;
   }
