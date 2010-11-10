@@ -65,6 +65,16 @@ public class Account12 {
     annualInterestRate = acctRate;
   }
 
+  //basic methods:
+
+  public withDraw(double amt) {
+    balance -= amt;
+  }
+
+  public deposit(double amt) {
+    balance += amt;
+  }
+
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
 
