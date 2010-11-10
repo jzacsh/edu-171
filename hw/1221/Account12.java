@@ -15,7 +15,7 @@ public class Account12 {
   public Account12() {
     id = 0;
     balance = 0;
-    anualInterestRate = 0;
+    annualInterestRate = 0;
     Date dateCreated = new Date();
   }
 
@@ -23,7 +23,7 @@ public class Account12 {
   public Account12(int acctId, double acctBal, double acctRate, Date acctDate) {
     id = acctId;
     balance = acctBal;
-    anualInterestRate = acctRate;
+    annualInterestRate = acctRate;
     dateCreated = acctDate;
   }
 
@@ -31,28 +31,38 @@ public class Account12 {
   //accessors:
 
   public getId() {
-    //codez
+    return id;
   }
 
   public getBalance() {
-    //codez
+    return balance;
   }
 
   public getRate() {
+    return annualInterestRate;
+  }
+
+  public getCreationDate() {
+    return dateCreated;
+  }
+
+  public getMonthlyInterestRate() {
     //codez
   }
 
 
   //mutators:
 
-  public setId() {
-    //codez
+  public setId(int acctId) {
+    id = acctId;
+  }
 
-  public setBalance() {
-    //codez
+  public setBalance(double acctBal) {
+    balance = acctBal;
+  }
 
-  public setRate() {
-    //codez
+  public setRate(double acctRate) {
+    annualInterestRate = acctRate;
   }
 
   public static void main(String[] args) {
