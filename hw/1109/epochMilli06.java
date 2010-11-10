@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -9,8 +8,18 @@ import java.util.Date;
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
-public class interest {
+public class epochMilli06 {
   public static String convertMillis(long millis) {
+    long seconds = millis / 1000; // rational base of measure
+    long time;
+
+    //hours:
+    time += seconds / (60 * 60); // 60 seconds, 60 minutes per hour.
+    //minutes:
+    time += (seconds % (60 * 60)) / 60; // just minutes
+    //seconds:
+    time += (seconds % (60 * 60)) % 60; //remainder
+
     return time;
   }
 
@@ -25,8 +34,7 @@ public class interest {
     System.out.printf("%s", intro);
 
     //codez
-    Calendar now = Calendar.getInstance();
-    long epoch = (long)now.getTimeInMillis();
-    System.out.printf("%d milliseconds is %s", epoch, convertMillis(epoch));
+    long m = new Date().getTime();
+    System.out.printf("%d milliseconds is %s", m, convertMillis(m));
   }
 }
