@@ -31,55 +31,54 @@ public class Account12 {
 
   //accessors:
 
-  public getId() {
+  public int getId() {
     return id;
   }
 
-  public getBalance() {
+  public double getBalance() {
     return balance;
   }
 
-  public getRate() {
+  public double getRate() {
     return annualInterestRate;
   }
 
-  public getCreationDate() {
+  public Date getCreationDate() {
     return dateCreated;
   }
 
-  public getMonthlyInterestRate() {
+  public double getMonthlyInterestRate() {
     return annualInterestRate / 12;
   }
 
 
   //mutators:
 
-  public setId(int acctId) {
+  public void setId(int acctId) {
     id = acctId;
   }
 
-  public setBalance(double acctBal) {
+  public void setBalance(double acctBal) {
     balance = acctBal;
   }
 
-  public setRate(double acctRate) {
+  public void setRate(double acctRate) {
     annualInterestRate = acctRate;
   }
 
   //basic methods:
 
-  public withDraw(double amt) {
+  public double withDraw(double amt) {
     balance -= amt;
+    return balance;
   }
 
-  public deposit(double amt) {
+  public double deposit(double amt) {
     balance += amt;
+    return balance;
   }
-
 
   public static void main(String[] args) {
-    Scanner stdin = new Scanner(System.in);
-
     //printed documentation
     String intro  = "Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
            intro += "pg 256; que. #7.3; due: 12/21  (lab# 12)\n";
