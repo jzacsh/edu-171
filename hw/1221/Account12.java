@@ -18,8 +18,7 @@ public class Account12 {
 
   //default constructor
   public Account12() {
-    Date now = new Date();
-    this(0, 0, 0, now);
+    this(0, 0, 0, new Date());
   }
 
   //constructor
