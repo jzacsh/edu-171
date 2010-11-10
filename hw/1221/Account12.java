@@ -1,9 +1,9 @@
 import java.util.Scanner;
 import java.util.Date;
-import java.lang.Math;
 import java.io.*;
 
 /**
+ * Very basic class for managing a bank account.
  * - course:     COMP-171-801RL
  * - assignment: pg 256; que. #7.3; due: 12/21  (lab# 12)
  *
@@ -81,7 +81,7 @@ public class Account12 {
     //printed documentation
     String intro  = "Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
            intro += "pg 256; que. #7.3; due: 12/21  (lab# 12)\n";
-    String summary = "\n";
+    String summary = "This is a very basic class for managing a bank account.\n";
     System.out.printf("\n%s\n%s", intro, summary);
 
     //codez
