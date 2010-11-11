@@ -19,9 +19,9 @@ public class milliStrTime06 {
    * - "ERROR: [...]" if something is wrong with input
    */
   public static String convertMillis(long millis) {
-    //sanity check
+    //convert epoch to current time
     long oneday = 86400000;
-    millis %= oneday; //get today's time from epoch
+    millis %= oneday;
 
     long seconds = millis / 1000; // rational base of measure
 
