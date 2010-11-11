@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Date;
 
 /**
@@ -8,7 +7,7 @@ import java.util.Date;
  *
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
-public class epochMilli06 {
+public class milliStrTime06 {
   public static String convertMillis(long millis) {
     long seconds = millis / 1000; // rational base of measure
 
@@ -16,15 +15,14 @@ public class epochMilli06 {
     long min = (seconds % (60 * 60)) / 60; // just minutes
     long sec = (seconds % (60 * 60)) % 60; //remainder
 
-    String time;
     //concatenate hrs, min, sec with ':' colon.
+    String delim = ":";
+    String time = hrs + delim + min + delim + sec;
 
     return time;
   }
 
   public static void main(String[] args) {
-    Scanner stdin = new Scanner(System.in);
-
     //printed documentation
     String intro = "\nJonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL\n";
     intro += "assignment: pg 167; que. #5.25; due: 11/09  (lab# 06)\n";
@@ -34,6 +32,10 @@ public class epochMilli06 {
 
     //codez
     long m = new Date().getTime();
-    System.out.printf("%d milliseconds is %s", m, convertMillis(m));
+    System.out.printf("%d milliseconds is %s\n", m, convertMillis(m));
+
+    //test of actual system's time, for comparison
+    long dbg = new Date().getTime();
+    System.out.printf("DEBUG: should be:  %d\n", dbg);
   }
 }
