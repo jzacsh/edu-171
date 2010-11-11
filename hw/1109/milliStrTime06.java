@@ -8,6 +8,15 @@ import java.util.Date;
  * @author Jonathan Zacsh <jzacsh@gmail.com>
  */
 public class milliStrTime06 {
+  /**
+   * Converts input millisecond-representation of current time into human
+   * readable format.
+   *
+   * @param  long   current time in milliseconds
+   * @return string hours, minutes, seconds
+   * - character delimeted hours, minutes, seconds
+   * - "ERROR: [...]" if something is wrong with input
+   */
   public static String convertMillis(long millis) {
     //sanity check
     if (millis > 86400000) {
@@ -21,7 +30,7 @@ public class milliStrTime06 {
     long sec = (seconds % (60 * 60)) % 60; //remainder
 
     //concatenate hrs, min, sec with ':' colon.
-    String delim = ":";
+    String delim = (String)':';
     String time = hrs + delim + min + delim + sec;
 
     return time;
