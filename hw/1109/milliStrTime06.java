@@ -15,8 +15,6 @@ public class milliStrTime06 {
    *
    * @param  long   epoch in milliseconds
    * @return string hours, minutes, seconds
-   * - character delimeted hours, minutes, seconds
-   * - "ERROR: [...]" if something is wrong with input
    */
   public static String convertMillis(long millis) {
     //convert epoch to current time
