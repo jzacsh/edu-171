@@ -33,9 +33,5 @@ public class milliStrTime06 {
     //codez
     long m = new Date().getTime();
     System.out.printf("%d milliseconds is %s\n", m, convertMillis(m));
-
-    //test of actual system's time, for comparison
-    long dbg = new Date().getTime();
-    System.out.printf("DEBUG: should be:  %d\n", dbg);
   }
 }
