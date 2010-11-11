@@ -9,6 +9,11 @@ import java.util.Date;
  */
 public class milliStrTime06 {
   public static String convertMillis(long millis) {
+    //sanity check
+    if (millis > 86400000) {
+      return "ERROR: time is greater than 24 hours.";
+    }
+
     long seconds = millis / 1000; // rational base of measure
 
     long hrs = seconds / (60 * 60); // 60 seconds, 60 minutes per hour.
