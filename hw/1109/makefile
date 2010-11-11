@@ -10,6 +10,7 @@ $(NAME).class: $(NAME).java
 run: $(NAME).class
 	java $(NAME)
 	date +%H:%M:%S
+	date +%s
 
 clean:
 	rm *.class

@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 /**
  * Convert milliseconds to readable colon-delimeted hour, minute, second.
@@ -13,10 +14,14 @@ public class milliStrTime06 {
    * Converts input millisecond-representation of current time into human
    * readable format.
    *
-   * @param  long   epoch in milliseconds
+   * @param  long  epoch in milliseconds, in original UTC-printed
    * @return string hours, minutes, seconds
    */
   public static String convertMillis(long millis) {
+    //convert to current UTC
+    long offset = (long) (TimeZone.getDefault().getOffset(millis));
+    millis += offset;
+
     //convert epoch to current time
     long oneday = 86400000;
     millis %= oneday;
@@ -29,7 +34,7 @@ public class milliStrTime06 {
 
     //concatenate hrs, min, sec with ':' colon.
     String delim = ":";
-    String time = hrs + delim + min + delim + sec;
+    String time = hrs + delim + min + delim + String.format("%02d", sec);
 
     return time;
   }
