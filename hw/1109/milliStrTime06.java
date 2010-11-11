@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Convert milliseconds to readable colon-delimeted hour, minute, second.
@@ -12,16 +13,15 @@ public class milliStrTime06 {
    * Converts input millisecond-representation of current time into human
    * readable format.
    *
-   * @param  long   current time in milliseconds
+   * @param  long   epoch in milliseconds
    * @return string hours, minutes, seconds
    * - character delimeted hours, minutes, seconds
    * - "ERROR: [...]" if something is wrong with input
    */
   public static String convertMillis(long millis) {
     //sanity check
-    if (millis > 86400000) {
-      return "ERROR: time is greater than 24 hours.";
-    }
+    long oneday = 86400000;
+    millis %= oneday; //get today's time from epoch
 
     long seconds = millis / 1000; // rational base of measure
 
@@ -45,7 +45,7 @@ public class milliStrTime06 {
     System.out.printf("%s", intro);
 
     //codez
-    long m = new Date().getTime();
-    System.out.printf("%d milliseconds is %s\n", m, convertMillis(m));
+    long epoch = System.currentTimeMillis();
+    System.out.printf("%d milliseconds is %s\n", epoch, convertMillis(epoch));
   }
 }
