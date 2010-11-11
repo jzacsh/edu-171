@@ -2,11 +2,10 @@ JFLAGS=-g
 JC=javac
 NAME=milliStrTime06
 
-default: $(NAME).class
+default: run
 
 $(NAME).class: $(NAME).java
 	$(JC) $(JFLAGS) $(NAME).java
-	run
 
 run: $(NAME).class
 	java $(NAME)
