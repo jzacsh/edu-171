@@ -14,7 +14,7 @@ public class milliStrTime06 {
    * Converts input millisecond-representation of current time into human
    * readable format.
    *
-   * @param  long  epoch in milliseconds, in original UTC-printed
+   * @param  long   epoch in milliseconds, in original UTC-printed
    * @return string hours, minutes, seconds
    */
   public static String convertMillis(long millis) {
