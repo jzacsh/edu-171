@@ -30,7 +30,7 @@ public class milliStrTime06 {
     long sec = (seconds % (60 * 60)) % 60; //remainder
 
     //concatenate hrs, min, sec with ':' colon.
-    String delim = (String)':';
+    String delim = ":";
     String time = hrs + delim + min + delim + sec;
 
     return time;
