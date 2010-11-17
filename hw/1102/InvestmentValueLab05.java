@@ -24,12 +24,12 @@ public class InvestmentValueLab05 {
     double investment, interest, value = 0;
     int dur = 0;
 
-    System.out.printf("Years  Future Value\n");  //print table header
     //get input
     double[] data;
     data = new double[2];
     getData(data);  //get user's desired values
 
+    System.out.printf("Years  Future Value\n");  //print table header
     //loop run claculations on user's input, based on 30 different loan
     //durations.
     for (dur = 1; dur <= 30; dur++) {
