@@ -1,0 +1,7 @@
+java milliStrTime06
+
+Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
+assignment: pg 167; que. #5.25; due: 11/09  (lab# 06)
+Converts milliseconds to readable colon-delimeted hour, minute, second.
+Below is a test run of the method convertMillis(), using the current time.
+1289952829968 milliseconds is 19:13:49
