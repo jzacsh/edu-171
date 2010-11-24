@@ -34,12 +34,16 @@ public class BowlingCalc {
 
     // print results
     System.out.printf("::the average for the team was: %.2f\n", teamAvg);
-    System.out.printf("::member averages:\n");
+    String table_horiz = "--------------------\n";
+    System.out.printf("%s", table_horiz);
+    System.out.printf("| member | average |\n");
+    System.out.printf("%s", table_horiz);
     // loop through member.length:
     for (int i = 0; i < members.length; i++) {
       // print each member's score and their index for reference
-      System.out.printf("%d, %.2f", i, members[i][1]);
+      System.out.printf("|%6d  | %-7.2f |\n", i+1, members[i][1]);
     }
+    System.out.printf("%s", table_horiz);
   }
 
   /**
