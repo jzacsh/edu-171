@@ -27,7 +27,7 @@ public class BowlingCalc {
     };
 
     // data structure to store individual member's averages
-    double[][] members = new Array[team.length];
+    double[][] members = new double[team.length][MAXSCORE];
     double teamAvg = teamAverage(team, members);
 
     // print results
@@ -74,7 +74,7 @@ public class BowlingCalc {
     double sum = 0;
     // loop through each member
     for (int i = 0; i < team.length; i++) {
-      double[][] scores = new Array(team[i].length);
+      double[][] scores = new double[team[i].length];
       playerAverage(team[i], scores);
       sum += scores[i][0];
       members[i][1] = scores[i][1];
