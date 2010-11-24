@@ -69,10 +69,10 @@ public class BowlingCalc {
    * passed by reference to store each member's individual average
    *
    * @param  double[][]  entire team data set.
-   * @param  double[]    empty array to store each member's average.
+   * @param  double[]    empty array to store each member's sum and average
    * @return double      average of the entire team's scores.
    */
-  protected static double teamAverage(double[][] team, double[] members) {
+  protected static double teamAverage(double[][] team, double[][] members) {
     double sum = 0;
     // loop through each member
     for (int i = 0; i < team.length; i++) {
