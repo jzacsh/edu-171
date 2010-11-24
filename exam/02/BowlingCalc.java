@@ -49,10 +49,13 @@ public class BowlingCalc {
    */
   protected static double teamAverage(double[][] team, double[] members) {
     double sum = 0;
-    for () {
-      // loop through each member
-      // store the results of the member in the members[][] array
-      // add member's average to sum
+    // loop through each member
+    for (int i = 0; i < team.length; i++) {
+      // loop through current member's scores
+      for (int m = 0; m < team[m].length; m++) {
+      }
+      // - store the results of the member in the member's avg in members[] array
+      // - add member's average to sum
     }
 
     return sum / team[0].length;
