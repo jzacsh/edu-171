@@ -25,37 +25,46 @@ public class BowlingCalc {
     };
 
     double[][] members = new Array[team.length];
-
-    double teamAvg = teamAverage(team);
+    double teamAvg = teamAverage(team, members);
 
     System.out.printf("::the average for the team was: %.2f\n", teamAvg);
     System.out.printf("::member averages:\n");
     // loop through member.length:
-    for () {
+    for (int i = 0; i < members.length; i++) {
       // print each member's score and their index for reference
       System.out.printf("%d, %.2f", i, member[i]);
     }
   }
 
-  protected static void playerAverage(double[] member) {
-    for () {
-      // i hAz all y0ur logix
+  /**
+   * Averages an array of scores for a given member.
+   *
+   * @param  double  an array of a player's scores.
+   * @return double  an average of the scores passed in.
+   */
+  protected static double playerAverage(double[] member) {
+    // loop through current member's scores
+    double sum = 0;
+    for (int m = 0; m < member.length; m++) {
+      sum += member[m];
     }
+    return sum / member.length
   }
 
   /**
-   * @param  double[][]  entire team data set
-   * @param  double[][]  blank slate to store each member's average
+   * Calculates average of the entire teams scores. Also uses empty array
+   * passed by reference to store each member's individual average
+   *
+   * @param  double[][]  entire team data set.
+   * @param  double[][]  blank slate to store each member's average.
+   * @return double      average of the entire team's scores.
    */
   protected static double teamAverage(double[][] team, double[] members) {
     double sum = 0;
     // loop through each member
     for (int i = 0; i < team.length; i++) {
-      // loop through current member's scores
-      for (int m = 0; m < team[m].length; m++) {
-      }
-      // - store the results of the member in the member's avg in members[] array
-      // - add member's average to sum
+      members[i] = playerAverage(team[i]);
+      sum += team[i];
     }
 
     return sum / team[0].length;
