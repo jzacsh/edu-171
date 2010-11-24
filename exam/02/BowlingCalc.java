@@ -12,18 +12,24 @@ public class BowlingCalc {
   double TEAMSIZE = 5;
   double GAMEQTY  = 3;
   public static void main(String[] args) {
-    String intro  = "I will calculate the averages for the bowling team and its"
-           intro .= "players.\n";
+    String intro  = "I will calculate the averages for the bowling team and its";
+           intro += " players.\n";
     System.out.printf(intro);
 
+    double[][] team = {
+      {290, 250, 100},
+      {100,  30,  15},
+      {230, 100,  90},
+      {  4,  50,  20},
+      {300, 300,   1}
+    };
+  }
+
+  protected static void playerAverage(double[] member) {
     //
   }
 
-  public static double playerAverage(double[] scores) {
-    //
-  }
-
-  public static double teamAverage(double[][] scores) {
+  protected static void teamAverage(double[][] team) {
     //
   }
 }
