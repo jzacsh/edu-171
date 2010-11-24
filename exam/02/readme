@@ -4,6 +4,6 @@ player's bowling average for one match, and the team average for the match.
 The program must also contain three methods (one methods is "main" which his
 the test program, one method calculates a player's average, and one method
 calculates the team average). A two dismensional array is an argument to the
-team average method, and a one dimensional array is an argument ot the
+team average method, and a one dimensional array is an argument to the
 player's average method. The average is the sum of the game scores divided by
 the number of games.
