@@ -38,7 +38,7 @@ public class BowlingCalc {
     // loop through member.length:
     for (int i = 0; i < members.length; i++) {
       // print each member's score and their index for reference
-      System.out.printf("%d, %.2f", i, member[i]);
+      System.out.printf("%d, %.2f", i, members[i][1]);
     }
   }
 
@@ -55,13 +55,13 @@ public class BowlingCalc {
   protected static void playerAverage(double[] scores, double[] vals) {
     // loop through current member's scores
     double sum = 0;
-    for (int m = 0; m < member.length; m++) {
-      sum += member[m];
+    for (int m = 0; m < scores.length; m++) {
+      sum += scores[m];
     }
 
     // mean algorithm
-    member[0] = sum;
-    member[1] = sum / member.length;
+    vals[0] = sum;
+    vals[1] = sum / scores.length;
   }
 
   /**
@@ -78,10 +78,10 @@ public class BowlingCalc {
     for (int i = 0; i < team.length; i++) {
       double[] scores = new double[team[i].length];
       playerAverage(team[i], scores);
-      sum += scores[i][0];
-      members[i][1] = scores[i][1];
+      sum += scores[0];
+      members[i][1] = scores[1];
       //unset the var for next loop
-      scores = NULL;
+      scores = null;
     }
 
     // mean algorithm
