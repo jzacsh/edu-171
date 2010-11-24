@@ -43,10 +43,14 @@ public class BowlingCalc {
   /**
    * Averages an array of scores for a given member.
    *
-   * @param  double  an array of a player's scores.
-   * @return double  an average of the scores passed in.
+   * @param   double  scores: an array of a player's scores.
+   * @param   double  vals: an empty 2-d array to fill with the return
+   * @return  void    by ref: an average of the scores passed in.
+   * - two-dimensional array of scores
+   *   -   0 => sum
+   *   -   1 => average
    */
-  protected static double playerAverage(double[] member) {
+  protected static void playerAverage(double[] scores, double[][] vals) {
     // loop through current member's scores
     double sum = 0;
     for (int m = 0; m < member.length; m++) {
@@ -54,7 +58,8 @@ public class BowlingCalc {
     }
 
     // mean algorithm
-    return sum / member.length
+    member[0] = sum;
+    member[1] = sum / member.length;
   }
 
   /**
@@ -62,15 +67,19 @@ public class BowlingCalc {
    * passed by reference to store each member's individual average
    *
    * @param  double[][]  entire team data set.
-   * @param  double[][]  blank slate to store each member's average.
+   * @param  double[]    empty array to store each member's average.
    * @return double      average of the entire team's scores.
    */
   protected static double teamAverage(double[][] team, double[] members) {
     double sum = 0;
     // loop through each member
     for (int i = 0; i < team.length; i++) {
-      members[i] = playerAverage(team[i]);
-      sum += team[i];
+      double[][] scores = new Array(team[i].length);
+      playerAverage(team[i], scores);
+      sum += scores[i][0];
+      members[i][1] = scores[i][1];
+      //unset the var for next loop
+      scores = NULL;
     }
 
     // mean algorithm
