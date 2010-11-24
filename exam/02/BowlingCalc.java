@@ -8,9 +8,11 @@ import java.lang.Math;
  *   games."
  */
 public class BowlingCalc {
-  double MAXSCORE = 300;
-  double TEAMSIZE = 5;
-  double GAMEQTY  = 3;
+  //setting constants:
+  public static final double MAXSCORE = 300;
+  public static final    int TEAMSIZE = 5;
+  public static final    int GAMEQTY  = 3;
+
   public static void main(String[] args) {
     String intro  = "I will calculate the averages for the bowling team and its";
            intro += " players.\n";
@@ -27,7 +29,7 @@ public class BowlingCalc {
     };
 
     // data structure to store individual member's averages
-    double[][] members = new double[team.length][MAXSCORE];
+    double[][] members = new double[team.length][TEAMSIZE];
     double teamAvg = teamAverage(team, members);
 
     // print results
@@ -44,13 +46,13 @@ public class BowlingCalc {
    * Averages an array of scores for a given member.
    *
    * @param   double  scores: an array of a player's scores.
-   * @param   double  vals: an empty 2-d array to fill with the return
+   * @param   double  vals: an empty array to fill with the return
    * @return  void    by ref: an average of the scores passed in.
    * - two-dimensional array of scores
    *   -   0 => sum
    *   -   1 => average
    */
-  protected static void playerAverage(double[] scores, double[][] vals) {
+  protected static void playerAverage(double[] scores, double[] vals) {
     // loop through current member's scores
     double sum = 0;
     for (int m = 0; m < member.length; m++) {
@@ -74,7 +76,7 @@ public class BowlingCalc {
     double sum = 0;
     // loop through each member
     for (int i = 0; i < team.length; i++) {
-      double[][] scores = new double[team[i].length];
+      double[] scores = new double[team[i].length];
       playerAverage(team[i], scores);
       sum += scores[i][0];
       members[i][1] = scores[i][1];
