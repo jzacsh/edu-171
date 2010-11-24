@@ -16,6 +16,8 @@ public class BowlingCalc {
            intro += " players.\n";
     System.out.printf(intro);
 
+    // get input, team's sores.
+    // @TODO: hardcoded, get from stdin
     double[][] team = {
       {290, 250, 100},
       {100,  30,  15},
@@ -24,9 +26,11 @@ public class BowlingCalc {
       {300, 300,   1}
     };
 
+    // data structure to store individual member's averages
     double[][] members = new Array[team.length];
     double teamAvg = teamAverage(team, members);
 
+    // print results
     System.out.printf("::the average for the team was: %.2f\n", teamAvg);
     System.out.printf("::member averages:\n");
     // loop through member.length:
@@ -48,6 +52,8 @@ public class BowlingCalc {
     for (int m = 0; m < member.length; m++) {
       sum += member[m];
     }
+
+    // mean algorithm
     return sum / member.length
   }
 
@@ -67,6 +73,7 @@ public class BowlingCalc {
       sum += team[i];
     }
 
+    // mean algorithm
     return sum / team[0].length;
   }
 }
