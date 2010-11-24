@@ -42,7 +42,7 @@ public class BowlingCalc {
     // loop through member.length:
     for (int i = 0; i < members.length; i++) {
       // print each member's score and their index for reference
-      System.out.printf("|%6d  | %7.2f |\n", i+1, members[i][1]);
+      System.out.printf("|%7d : %7.2f |\n", i+1, members[i][1]);
     }
     System.out.printf("%s", table_horiz);
   }
