@@ -1,0 +1,9 @@
+A bowling team contains 5 players, and a bowling match is 3 games. A game
+score is 0 to 300 points. Write a program to calculate and siplay each
+player's bowling average for one match, and the team average for the match.
+The program must also contain three methods (one methods is "main" which his
+the test program, one method calculates a player's average, and one method
+calculates the team average). A two dismensional array is an argument to the
+team average method, and a one dimensional array is an argument ot the
+player's average method. The avergae is the sum of the game scores divided by
+the number of games.
