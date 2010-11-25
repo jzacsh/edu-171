@@ -1,0 +1,13 @@
+java BowlingCalc
+I will calculate the averages for the bowling team and its players.
+--------------------
+team average: 652.00
+--------------------
+| member | average |
+--------------------
+|      1 :  213.33 |
+|      2 :   48.33 |
+|      3 :  140.00 |
+|      4 :   50.00 |
+|      5 :  200.33 |
+--------------------
