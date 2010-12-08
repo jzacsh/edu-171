@@ -1,0 +1,34 @@
+~$ javac Account12.java && java Account12
+
+Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
+pg 256; que. #7.3; due: 12/21  (lab# 12)
+
+This is a very basic class for managing a bank account.
+Below is a proof of concept run of new object
+using Account12 class.  Current time is:
+        Wed Dec 08 01:41:18 EST 2010
+::creating object with the following test data:
+    ::account id:       93024
+    ::account balance:  $380.32
+    ::annual interest rate:     5%
+
+::Running test of accessor functions:
+    :: account id:      93024
+    :: account balance: $380.32
+    :: annual interest rate:    5%
+    :: monthly interest rate:   0.4167%
+    :: account creation date:   Wed Dec 08 01:41:18 EST 2010
+
+::Running test of mutator functions and immediately calling accesors:
+    :: setting account id to:   435232
+      :: new account id:        435232
+    :: setting account balance to:      $498.92
+      :: new account balance:   $498.92
+    :: setting annual interest rate to: 3%
+      :: new annual interest rate:      3%
+      :: new monthly interest rate:     0.2500%
+
+::Running test of basic class methods:
+    :: (current balance is: $498.92)
+    :: balance based on widthdrawal of $23.20, would be::       $475.72
+    :: balance based on deposit of $89.02, would be:    $564.74
