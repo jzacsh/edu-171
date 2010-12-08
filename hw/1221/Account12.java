@@ -158,6 +158,8 @@ public class Account12 {
     String summary = "This is a very basic class for managing a bank account.\n";
     System.out.printf("\n%s\n%s", intro, summary);
 
+    ///////////////////////////////////////////////
+
     // proof of concept object for Account12 class.
 
     //dummy data to be used:
@@ -168,7 +170,6 @@ public class Account12 {
     //introduction:
     System.out.printf("Below is a proof of concept run of new object\n");
     System.out.printf("using Account12 class.\tCurrent time is:\n\t%s\n", new Date());
-
 
     //basis data
     System.out.printf("::creating object with the following test data:\n");
