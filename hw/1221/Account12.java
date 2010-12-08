@@ -17,8 +17,11 @@ public class Account12 {
   Date dateCreated;
 
   //default constructor
+  /**
+   * Implicitly creates an account object zero-values where possible.
+   */
   public Account12() {
-    this(0, 0, 0, new Date());
+    this(0, 0, 0);
   }
 
   //constructor
