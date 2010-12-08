@@ -22,11 +22,24 @@ public class Account12 {
   }
 
   //constructor
-  public Account12(int acctId, double acctBal, double acctRate, Date acctDate) {
+  /**
+   * Explicitly creates an account object.
+   *
+   * @param  int     account id
+   * @param  double  account balance
+   * @param  double  annual interest rate in percent format (5% is 5 not .05)
+   */
+  public Account12(int acctId, double acctBal, double acctRate) {
+    //
+    //
+    // this();
+    // for each:
+    //   if not null, use mutator.
+    //
     id = acctId;
     balance = acctBal;
     annualInterestRate = acctRate;
-    dateCreated = acctDate;
+    dateCreated = new Date();
   }
 
 
