@@ -207,6 +207,16 @@ public class Account12 {
     acct.setRate(acctRate);
     System.out.printf("      :: new annual interest rate:\t%.0f%%\n", acct.getRate());
     System.out.printf("      :: new monthly interest rate:\t%.4f%%\n", acct.getMonthlyInterestRate());
+
+    //new dummy data for mutations
+    double w = 23.20;
+    double d = 89.02;
+
+    //proof of basic methods
+    System.out.printf("\n::Running test of basic class methods:\n");
+    System.out.printf("    :: (current balance is: $%.2f)\n", acct.getBalance());
+    System.out.printf("    :: balance based on widthdrawal of $%.2f, would be::\t$%.2f\n", w, acct.withDraw(w));
+    System.out.printf("    :: balance based on deposit of $%.2f, would be:\t$%.2f\n", d, acct.deposit(d));
   }
 }
 
