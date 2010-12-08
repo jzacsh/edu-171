@@ -159,6 +159,53 @@ public class Account12 {
     System.out.printf("\n%s\n%s", intro, summary);
 
     // proof of concept object for Account12 class.
+
+    //dummy data to be used:
+    int acctId = 93024;
+    double acctBal = 380.32;
+    double acctRate = 5;
+
+    //introduction:
+    System.out.printf("Below is a proof of concept run of new object\n");
+    System.out.printf("using Account12 class.\tCurrent time is:\n\t%s\n", new Date());
+
+
+    //basis data
+    System.out.printf("::creating object with the following test data:\n");
+    System.out.printf("    ::account id:\t%d\n", acctId);
+    System.out.printf("    ::account balance:\t$%.2f\n", acctBal);
+    System.out.printf("    ::annual interest rate:\t%.0f%%\n", acctRate);
+
+    //create test object
+    Account12 acct = new Account12(acctId, acctBal, acctRate);
+
+    //proof of accessor methods
+    System.out.printf("\n::Running test of accessor functions:\n");
+    System.out.printf("    :: account id:\t%d\n", acct.getId());
+    System.out.printf("    :: account balance:\t$%.2f\n", acct.getBalance());
+    System.out.printf("    :: annual interest rate:\t%.0f%%\n", acct.getRate());
+    System.out.printf("    :: monthly interest rate:\t%.4f%%\n", acct.getMonthlyInterestRate());
+    System.out.printf("    :: account creation date:\t%s\n", acct.getCreationDate());
+
+    //new dummy data for mutations
+    acctId = 435232;
+    acctBal = 498.92;
+    acctRate = 3;
+
+    //proof of mutator methods
+    System.out.printf("\n::Running test of mutator functions and immediately calling accesors:\n");
+    System.out.printf("    :: setting account id to:\t%d\n", acctId);
+    acct.setId(acctId);
+    System.out.printf("    :: new account id:\t%d\n", acct.getId());
+    //
+    System.out.printf("    :: setting account balance to:\t$%.2f\n", acctBal);
+    acct.getBalance(acctBal);
+    System.out.printf("    :: new account balance:\t$%.2f\n", acct.getBalance());
+    //
+    System.out.printf("    :: setting annual interest rate to:\t%.0f%%\n", acctRate);
+    acct.getRate(acctRate);
+    System.out.printf("    :: new annual interest rate:\t%.0f%%\n", acct.getRate());
+    System.out.printf("    :: new monthly interest rate:\t%.4f%%\n", acct.getMonthlyInterestRate());
   }
 }
 
