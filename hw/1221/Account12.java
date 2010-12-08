@@ -197,16 +197,16 @@ public class Account12 {
     System.out.printf("\n::Running test of mutator functions and immediately calling accesors:\n");
     System.out.printf("    :: setting account id to:\t%d\n", acctId);
     acct.setId(acctId);
-    System.out.printf("    :: new account id:\t%d\n", acct.getId());
+    System.out.printf("      :: new account id:\t%d\n", acct.getId());
     //
     System.out.printf("    :: setting account balance to:\t$%.2f\n", acctBal);
-    acct.getBalance(acctBal);
-    System.out.printf("    :: new account balance:\t$%.2f\n", acct.getBalance());
+    acct.setBalance(acctBal);
+    System.out.printf("      :: new account balance:\t$%.2f\n", acct.getBalance());
     //
     System.out.printf("    :: setting annual interest rate to:\t%.0f%%\n", acctRate);
-    acct.getRate(acctRate);
-    System.out.printf("    :: new annual interest rate:\t%.0f%%\n", acct.getRate());
-    System.out.printf("    :: new monthly interest rate:\t%.4f%%\n", acct.getMonthlyInterestRate());
+    acct.setRate(acctRate);
+    System.out.printf("      :: new annual interest rate:\t%.0f%%\n", acct.getRate());
+    System.out.printf("      :: new monthly interest rate:\t%.4f%%\n", acct.getMonthlyInterestRate());
   }
 }
 
