@@ -1,0 +1,38 @@
+$ ls -la
+total 56
+drwxr-xr-x 2 jzacsh users 4096 Dec 14 21:05 .
+drwxr-xr-x 5 jzacsh users 4096 Dec 14 20:15 ..
+-rw-r--r-- 1 jzacsh users 1374 Dec 14 21:05 bonusQue43.class
+-rw-r--r-- 1 jzacsh users  906 Dec 14 21:04 bonusQue43.java
+-rw-r--r-- 1 jzacsh users  224 Dec 14 19:48 Count.class
+-rw-r--r-- 1 jzacsh users 2462 Dec 14 20:45 Fan.class
+-rw-r--r-- 1 jzacsh users 1952 Dec 14 20:45 Fan.java
+-rw-r--r-- 1 jzacsh users  376 Dec 14 20:46 Fan.out
+-rw-r--r-- 1 jzacsh users  608 Dec 14 19:21 que14.class
+-rw-r--r-- 1 jzacsh users  411 Dec 14 19:21 que14.java
+-rw-r--r-- 1 jzacsh users  890 Dec 14 19:43 que28.class
+-rw-r--r-- 1 jzacsh users  718 Dec 14 19:42 que28.java
+-rw-r--r-- 1 jzacsh users  676 Dec 14 19:48 que31.class
+-rw-r--r-- 1 jzacsh users  540 Dec 14 19:48 que31.java
+
+$ javac bonusQue43.java && java bonusQue43
+
+Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
+Date: 2010-12-14; Exam 03; Bonus que 43;
+
+Hello, I test for the existence of a file.
+Which file would you like to make sure exists?
+ [full or relative path]: boop.txt
+The following file does NOT exist:
+        boop.txt
+
+$ java bonusQue43
+
+Jonathan Zacsh <jzacsh@gmail.com>; COMP-171-801RL
+Date: 2010-12-14; Exam 03; Bonus que 43;
+
+Hello, I test for the existence of a file.
+Which file would you like to make sure exists?
+ [full or relative path]: que31.java
+The following file does, indeed, exist:
+        que31.java
