@@ -1,0 +1,13 @@
+$ javac Fan.java && java Fan
+Jonathan Zacsh <jzacsh@gmail.com>; Exam 03; Date 2010-12-14
+This is a proof of concept class to show off the accessors
+and methods of a 'Fan' object.
+
+::Instantiated new Fan object, using:
+        speed FAST, radius 10.0, color 'yellow', status 'off'
+::Now running its toString() method...
+
+Fan Object:
+ speed  : 3
+ color  : yellow
+ radius : 10.0
