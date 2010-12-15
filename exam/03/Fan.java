@@ -6,22 +6,28 @@
  */
 public class Fan {
   //fan speed
-  int SLOW   = 1;
-  int MEDIUM = 2;
-  int FAST   = 3;
+  public static final int SLOW   = 1;
+  public static final int MEDIUM = 2;
+  public static final int FAST   = 3;
+
+  //class properties
+  protected int speed;
+  protected boolean on;
+  protected String color;
+  protected double radius;
 
   Fan() {
-    int speed = SLOW;
-    bool on = false;
-    String color = "blue";
-    double radius = 5.0;
+    speed = SLOW;
+    on = false;
+    color = "blue";
+    radius = 5.0;
   }
 
-  Fan(int spd, bool stat, String col, double rad) {
-    int speed = spd;
-    bool on = stat;
-    String color = col;
-    double radius = rad;
+  Fan(int spd, boolean stat, String col, double rad) {
+    speed = spd;
+    on = stat;
+    color = col;
+    radius = rad;
   }
 
   /**
@@ -35,11 +41,11 @@ public class Fan {
     speed = spd;
   }
 
-  bool getOn() {
+  boolean getOn() {
     return on;
   }
 
-  voit setOn(bool stat) {
+  void setOn(boolean stat) {
     on = stat;
   }
 
@@ -63,7 +69,7 @@ public class Fan {
     String msg = "Fan Object:\n";
 
     //check status
-    if (this.on) {
+    if (on) {
       msg += " speed  : " + speed  + "\n";
     }
     else {
@@ -81,10 +87,10 @@ public class Fan {
            intro += "and methods of a 'Fan' object.\n";
     System.out.printf("%s\n", intro);
 
-    Fan f = new Fan(FAST, on, "yellow", 10.0);
-    String explained  = "Instantiated new Fan object, using:\n\t";
-           explained += "speed FAST, radius 10.0, color 'yellow', status 'off'";
-           explained += "Now running its toString() method...";
-    System.out.printf("::%s\n%s", explained, f.toString());
+    Fan f = new Fan(FAST, true, "yellow", 10.0);
+    String explained  = "::Instantiated new Fan object, using:\n\t";
+           explained += "speed FAST, radius 10.0, color 'yellow', status 'off'\n";
+           explained += "::Now running its toString() method...\n";
+    System.out.printf("%s\n%s", explained, f.toString());
   }
 }
