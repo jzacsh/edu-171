@@ -2,7 +2,7 @@
 /**
  *
  */
-public class que41Bonus {
+public class Fan {
   public static void main(String[] args) {
     //
   }
